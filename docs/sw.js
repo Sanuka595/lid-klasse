@@ -1,4 +1,4 @@
-const CACHE = "lid-klasse-3";
+const CACHE = "lid-klasse-4";
 const FILES = [
   "./",
   "./index.html",
@@ -9,6 +9,9 @@ const FILES = [
   "./figures.js",
   "./manifest.webmanifest",
   "./icon.svg",
+  "./fonts/onest-latin-wght-normal.woff2",
+  "./fonts/onest-cyrillic-wght-normal.woff2",
+  "./fonts/jetbrains-mono-latin-wght-normal.woff2",
 ];
 
 self.addEventListener("install", (event) => {

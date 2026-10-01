@@ -30,6 +30,7 @@
   const themeBtn = document.getElementById("theme");
   const dataBtn = document.getElementById("data-btn");
 
+  const ICON_SPEAK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
   const state = load();
 
   function load() {
@@ -284,9 +285,9 @@
   function activeExamBanner() {
     if (!state.exam || state.exam.done || state.mode === "exam") return "";
     const left = remaining();
-    return `<div class="warn" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-      <span>⏱️ <strong>Prüfung läuft:</strong> noch ${clock(left)}</span>
-      <button type="button" class="go" data-act="resume-exam" style="min-height:2rem;padding:0.2rem 0.6rem">Zur Prüfung</button>
+    return `<div class="warn banner">
+      <span><strong>Prüfung läuft</strong> · noch <span class="clock">${clock(left)}</span></span>
+      <button type="button" class="go" data-act="resume-exam">Zur Prüfung</button>
     </div>`;
   }
 
@@ -343,7 +344,7 @@
           <span>Auswahl abgeschlossen · ${c.seen} gesehen · ${c.ok} richtig · ${c.bad} falsch</span>
         </div>
         <article class="card done-card">
-          <h2>Auswahl abgeschlossen 🎉</h2>
+          <h2>Auswahl abgeschlossen</h2>
           <p>Du hast alle Fragen in diesem Filter durchgesehen.</p>
           <div class="row">
             <button type="button" class="go" data-act="restart-filter">Von vorne wiederholen</button>
@@ -391,14 +392,15 @@
           <button type="button" class="text-btn ${state.filter === "new" ? "on" : ""}" data-act="filter" data-filter="new">Neu</button>
           <button type="button" class="text-btn ${state.filter === "bad" ? "on" : ""}" data-act="filter" data-filter="bad">Falsch (${c.bad})</button>
           <button type="button" class="text-btn ${state.filter === "star" ? "on" : ""}" data-act="filter" data-filter="star">Gemerkt (${c.star})</button>
-          <button type="button" class="text-btn ${state.shuffle ? "on" : ""}" data-act="toggle-shuffle" title="Reihenfolge mischen">${state.shuffle ? "🔀 Gemischt" : "🔢 Sortiert"}</button>
+          <button type="button" class="text-btn ${state.shuffle ? "on" : ""}" data-act="toggle-shuffle" title="Reihenfolge mischen">${state.shuffle ? "Gemischt" : "Sortiert"}</button>
         </span>
       </div>
+      <div class="progress"><i style="width:${Math.round(((state.index + 1) / list.length) * 100)}%"></i></div>
       <article class="card">
         <div class="q-header">
           <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
-          <div style="display:flex;gap:0.4rem;align-items:center">
-            <button type="button" class="text-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen" style="min-height:1.8rem;padding:0.1rem 0.4rem">🔊</button>
+          <div class="q-tools">
+            <button type="button" class="icon-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen">${ICON_SPEAK}</button>
             <button type="button" class="star-btn ${isStarred ? "on" : ""}" data-act="toggle-star" data-id="${esc(q.id)}" title="${isStarred ? "Aus Gemerkt entfernen" : "Frage merken"}">
               ${isStarred ? "★ Gemerkt" : "☆ Merken"}
             </button>
@@ -428,7 +430,7 @@
       const landName = (LANDS.find((row) => row[0] === state.land) || ["", state.land])[1];
       const historyItems = (state.examHistory || []).slice(0, 5).map((h) => {
         const d = new Date(h.at).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
-        return `<li style="display:flex;justify-content:space-between;padding:0.3rem 0;border-bottom:1px solid var(--rule)">
+        return `<li class="hist-row">
           <span>${d} — <b>${h.score}/33</b> Punkte</span>
           <span class="${h.passedCitizen ? "hit" : (h.passedCourse ? "hit" : "miss")}">
             ${h.passedCitizen ? "Einbürgerung bestanden" : (h.passedCourse ? "Kurs bestanden" : "Nicht bestanden")}
@@ -518,13 +520,14 @@
           <span>Frage ${exam.i + 1} von 33 · ${Object.keys(exam.picks).length}/33 beantwortet</span>
           <span id="clock" class="clock ${left < 5 * 60 * 1000 ? "low" : ""}">${clock(left)}</span>
         </div>
+        <div class="progress"><i style="width:${Math.round((Object.keys(exam.picks).length / 33) * 100)}%"></i></div>
         <div class="exam-grid">${gridCells}</div>
       </div>
       ${confirmBox}
       <article class="card">
         <div class="q-header">
           <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
-          <button type="button" class="text-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen" style="min-height:1.8rem;padding:0.1rem 0.4rem">🔊</button>
+          <button type="button" class="icon-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen">${ICON_SPEAK}</button>
         </div>
         <p class="q-text">${esc(q.question)}</p>
         ${figureFor(q)}
@@ -570,8 +573,8 @@
     app.innerHTML = `
       ${activeExamBanner()}
       <p class="quiet">Antippen öffnet die Frage. Grün zuletzt richtig, rot zuletzt falsch.</p>
-      <div style="margin: 0.6rem 0">
-        <input type="search" id="grid-search-input" placeholder="Frage suchen (z. B. Grundgesetz, Wahl, 25)..." value="${esc(state.gridQuery || "")}" style="width:100%;padding:0.4rem 0.6rem;background:transparent;border:1px solid var(--rule);color:inherit;min-height:2.4rem">
+      <div>
+        <input type="search" id="grid-search-input" placeholder="Frage suchen (z. B. Grundgesetz, Wahl, 25)..." value="${esc(state.gridQuery || "")}">
       </div>
       <h3>Allgemeine Fragen (${general.length})</h3>
       <div class="grid">${general.length ? general.map(cell).join("") : '<p class="quiet">Keine Treffer</p>'}</div>
