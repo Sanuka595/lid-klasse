@@ -41,8 +41,8 @@ lid-klasse/
 │   ├── questions.json        # Полная структурированная база (460 вопросов)
 │   └── build-report.json     # Отчёт парсинга и сопоставления ответов
 ├── scripts/
-│   └── build_data.py         # Скрипт сборки данных и экспорта в site/questions.js
-├── site/                     # Фронтенд-приложение (PWA)
+│   └── build_data.py         # Скрипт сборки данных и экспорта в docs/questions.js
+├── docs/                    # Фронтенд-приложение (GitHub Pages / PWA)
 │   ├── index.html            # Главная страница
 │   ├── app.js                # Логика приложения (навигация, экзамен, хранилище)
 │   ├── figures.js            # Векторные SVG-карты, гербы и иллюстрации
@@ -72,7 +72,7 @@ lid-klasse/
 npm start
 
 # Или напрямую через Python:
-python3 -m http.server 8000 --directory site
+python3 -m http.server 8000 --directory docs
 ```
 После запуска откройте в браузере: **http://localhost:8000**
 
@@ -99,7 +99,7 @@ npm run build
 # или:
 python3 scripts/build_data.py
 ```
-Скрипт автоматически обновит `data/questions.json`, `data/build-report.json` и `site/questions.js`.
+Скрипт автоматически обновит `data/questions.json`, `data/build-report.json` и `docs/questions.js`.
 
 ---
 
@@ -132,5 +132,5 @@ git push -u origin main
 3. **Бесплатная публикация сайта (GitHub Pages):**
    - В созданном репозитории на GitHub перейдите в **Settings** ➔ **Pages**.
    - В разделе *Build and deployment* выберите Source: **Deploy from a branch**.
-   - Выберите ветку `main` и папку **/site**.
+   - Выберите ветку `main` и папку **/docs**.
    - Нажмите **Save**. Через 1 минуту приложение будет доступно онлайн для любого пользователя или телефона!

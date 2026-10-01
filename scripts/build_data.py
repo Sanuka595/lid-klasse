@@ -17,7 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_SOURCE_DIR = BASE_DIR / "data" / "source"
 DEFAULT_OUT_DIR = BASE_DIR / "data"
-DEFAULT_SITE_DIR = BASE_DIR / "site"
+DEFAULT_SITE_DIR = BASE_DIR / "docs"
 
 BOX = "\uf0a3□☐"
 PAGE_RE = re.compile(r"\[\[PAGE (\d+)\]\]")

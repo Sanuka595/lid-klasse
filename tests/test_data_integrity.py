@@ -5,7 +5,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
-SITE_DIR = BASE_DIR / "site"
+SITE_DIR = BASE_DIR / "docs"
 
 BUNDESLAENDER = {
     "BW", "BY", "BE", "BB", "HB", "HH", "HE", "MV",

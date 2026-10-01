@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Übungsheft und Prüfungssimulator zum Test Leben in Deutschland (BAMF Gesamtfragenkatalog)",
   "scripts": {
-    "start": "python3 -m http.server 8000 --directory site",
-    "test": "python3 -m unittest discover -s tests -v && node -c site/app.js && node -c site/figures.js && node -c site/sw.js",
+    "start": "python3 -m http.server 8000 --directory docs",
+    "test": "python3 -m unittest discover -s tests -v && node -c docs/app.js && node -c docs/figures.js && node -c docs/sw.js",
     "build": "python3 scripts/build_data.py"
   },
   "keywords": [
