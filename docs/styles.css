@@ -158,3 +158,47 @@ input[type=search]{width:100%;margin:.5rem 0;font-weight:400}
   .tools label span,.tools label{font-size:0}
   .tools select{font-size:.85rem}
 }
+
+/* ---- polish: depth, light, motion ---- */
+:root{--glow:15%}
+:root[data-theme="dark"]{--glow:7%}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glow:7%}}
+::selection{background:var(--accent);color:var(--on-accent)}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(60rem 26rem at 10% -10%,color-mix(in srgb,var(--accent) var(--glow),transparent),transparent 70%) no-repeat fixed var(--bg)}
+.card{box-shadow:inset 0 1px 0 rgb(255 255 255 / .75),0 1px 2px rgb(19 19 18 / .05),0 22px 44px -26px rgb(19 19 18 / .3)}
+:root[data-theme="dark"] .card{box-shadow:inset 0 1px 0 rgb(255 255 255 / .05),0 22px 44px -24px #000}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .card{box-shadow:inset 0 1px 0 rgb(255 255 255 / .05),0 22px 44px -24px #000}}
+.go{box-shadow:inset 0 1px 0 rgb(255 255 255 / .18),0 8px 16px -10px rgb(19 19 18 / .7)}
+.go:hover{box-shadow:0 10px 22px -10px color-mix(in srgb,var(--accent) 80%,#000)}
+.q-text,.result h2,.clock,.status{font-variant-numeric:tabular-nums}
+[data-act="next"]::after,[data-act="exam-next"]::after{content:"\2192";display:inline-block;margin-left:.55rem;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+[data-act="prev"]::before,[data-act="exam-prev"]::before{content:"\2190";margin-right:.45rem}
+[data-act="next"]:hover::after,[data-act="exam-next"]:hover::after{transform:translateX(4px)}
+.modes button.on{box-shadow:inset 0 3px 0 -1px var(--accent)}
+
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+@keyframes fill{from{transform:scaleX(0)}}
+@keyframes pop{40%{transform:scale(1.28)}}
+@keyframes shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}}
+@media (prefers-reduced-motion:no-preference){
+  button,.opt,.box,.progress i{transition:background-color .18s,border-color .18s,color .18s,transform .2s cubic-bezier(.3,.7,.3,1),box-shadow .25s,width .5s cubic-bezier(.2,.8,.2,1)}
+  button:active:not(:disabled){transform:scale(.97)}
+  .opt:not(:disabled):hover{transform:translateX(4px)}
+  .opt:not(:disabled):active{transform:translateX(4px) scale(.99)}
+  [data-fx="enter"] .card,[data-fx="enter"] .status,[data-fx="enter"] .exam-status-bar,[data-fx="enter"] h2,[data-fx="enter"] h3,[data-fx="enter"] .grid,[data-fx="enter"] .banner{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+  [data-fx="enter"] .card .opt{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+  [data-fx="enter"] .opt:nth-child(1){animation-delay:.10s}
+  [data-fx="enter"] .opt:nth-child(2){animation-delay:.16s}
+  [data-fx="enter"] .opt:nth-child(3){animation-delay:.22s}
+  [data-fx="enter"] .opt:nth-child(4){animation-delay:.28s}
+  [data-fx="enter"] .row{animation:rise .5s .34s cubic-bezier(.2,.8,.2,1) both}
+  [data-fx="enter"] .progress i{transform-origin:left;animation:fill .8s cubic-bezier(.2,.8,.2,1) both}
+  [data-fx="enter"] .result h2{animation:pop .7s .1s both}
+  [data-fx="enter"] .lines div{animation:rise .5s .25s both}
+  [data-fx="reveal"] .is-wrong{animation:shake .34s}
+  [data-fx="reveal"] .is-right .box,[data-fx="star"] .star-btn.on{animation:pop .45s}
+  [data-fx="hint"] .hintline{animation:drop .28s both}
+  .top{animation:drop .5s both}
+}

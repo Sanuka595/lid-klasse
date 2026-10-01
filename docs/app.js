@@ -32,6 +32,8 @@
 
   const ICON_SPEAK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
   const state = load();
+  let fx = "";
+  let lastKey = "";
 
   function load() {
     let saved = {};
@@ -195,6 +197,7 @@
     } else {
       state.stars[id] = true;
     }
+    fx = "star";
     save();
     render();
   }
@@ -593,6 +596,12 @@
       state.filter = "bad";
       renderLearn();
     } else renderLearn();
+
+    const key = [state.mode, state.land, state.filter, state.index, state.exam && state.exam.i,
+      Boolean(state.exam), Boolean(state.exam && state.exam.done), state.showDataModal, state.doneList].join("|");
+    if (key !== lastKey) { fx = fx || "enter"; lastKey = key; }
+    app.dataset.fx = fx;
+    fx = "";
   }
 
   function openQuestion(id) {
@@ -653,6 +662,7 @@
     if (act === "hint") {
       state.hint = el.dataset.hint;
       state.hintWord = el.textContent;
+      fx = "hint";
       render();
       return;
     }
@@ -713,6 +723,7 @@
       state.revealed = true;
       state.pin = q.id;
       mark(q.id, state.pick === q.correct);
+      fx = "reveal";
       render();
       return;
     }
