@@ -331,3 +331,106 @@ h3 {
   font-size: 1rem;
   margin: 1rem 0 0.3rem;
 }
+
+.q-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.star-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.45rem;
+  min-height: 1.8rem;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-btn.on {
+  color: #b8860b;
+  border-color: #b8860b;
+  font-weight: 500;
+}
+
+:root[data-theme="dark"] .star-btn.on {
+  color: #f1c40f;
+  border-color: #f1c40f;
+}
+
+.hint-close {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0 0.3rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hint-close:hover {
+  color: var(--ink);
+}
+
+.exam-status-bar {
+  margin-bottom: 0.8rem;
+}
+
+.exam-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.22rem;
+  margin-top: 0.45rem;
+}
+
+.exam-cell {
+  width: 1.95rem;
+  height: 1.85rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--rule);
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.exam-cell.picked {
+  background: var(--chip);
+  color: var(--ink);
+  border-color: var(--ink);
+  font-weight: 600;
+}
+
+.exam-cell.current {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.confirm-box {
+  margin: 0.8rem 0;
+  padding: 0.65rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--mark);
+}
+
+.confirm-box p {
+  margin: 0.2rem 0 0.5rem;
+}
+
+.modal-card, .done-card {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+

@@ -28,6 +28,7 @@
   const app = document.getElementById("app");
   const landSelect = document.getElementById("land");
   const themeBtn = document.getElementById("theme");
+  const dataBtn = document.getElementById("data-btn");
 
   const state = load();
 
@@ -35,26 +36,35 @@
     let saved = {};
     try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
     return {
-      mode: "learn",
+      mode: saved.mode || "learn",
       land: saved.land || "BE",
       theme: saved.theme || "",
       hints: saved.hints !== false,
-      filter: "all",
-      index: 0,
+      filter: saved.filter || "all",
+      index: typeof saved.index === "number" ? saved.index : 0,
       revealed: false,
       pick: null,
       hint: null,
+      hintWord: null,
       stats: saved.stats || {},
+      stars: saved.stars || {},
       exam: saved.exam || null,
+      confirmSubmit: false,
+      showDataModal: false,
+      doneList: false,
     };
   }
 
   function save() {
     localStorage.setItem(KEY, JSON.stringify({
+      mode: state.mode,
       land: state.land,
       theme: state.theme,
       hints: state.hints,
+      filter: state.filter,
+      index: state.index,
       stats: state.stats,
+      stars: state.stars,
       exam: state.exam,
     }));
   }
@@ -113,6 +123,7 @@
     const all = pool();
     if (state.filter === "new") return all.filter((q) => !state.stats[q.id]);
     if (state.filter === "bad") return all.filter((q) => state.stats[q.id] && state.stats[q.id].last === "bad");
+    if (state.filter === "star") return all.filter((q) => Boolean(state.stars[q.id]));
     return all;
   }
 
@@ -121,14 +132,16 @@
     let seen = 0;
     let ok = 0;
     let bad = 0;
+    let star = 0;
     for (const q of all) {
+      if (state.stars[q.id]) star += 1;
       const row = state.stats[q.id];
       if (!row) continue;
       seen += 1;
       if (row.last === "ok") ok += 1;
       if (row.last === "bad") bad += 1;
     }
-    return { total: all.length, seen, ok, bad };
+    return { total: all.length, seen, ok, bad, star };
   }
 
   function mark(id, good) {
@@ -138,6 +151,16 @@
     prev.last = good ? "ok" : "bad";
     state.stats[id] = prev;
     save();
+  }
+
+  function toggleStar(id) {
+    if (state.stars[id]) {
+      delete state.stars[id];
+    } else {
+      state.stars[id] = true;
+    }
+    save();
+    render();
   }
 
   function shuffle(list) {
@@ -162,6 +185,7 @@
       started: Date.now(),
       done: null,
     };
+    state.confirmSubmit = false;
     state.mode = "exam";
     save();
     render();
@@ -213,25 +237,81 @@
     return classes.join(" ");
   }
 
+  function renderDataModal() {
+    return `
+      <section class="card modal-card">
+        <h2>Fortschritt & Daten</h2>
+        <p class="quiet">Sichere deinen Lernstand als Datei, übertrage ihn auf ein anderes Gerät oder setze die Statistik zurück.</p>
+        <div class="row">
+          <button type="button" class="text-btn" data-act="export-data">Fortschritt exportieren (JSON)</button>
+          <label class="file-label text-btn">
+            Fortschritt importieren
+            <input type="file" accept=".json" style="display:none" data-act="import-file">
+          </label>
+          <button type="button" class="text-btn mark" data-act="reset-data">Statistik zurücksetzen</button>
+        </div>
+        <div id="data-msg" class="quiet" style="margin-top:0.6rem"></div>
+        <div class="row" style="margin-top:0.8rem">
+          <button type="button" class="go" data-act="close-data-modal">Schließen</button>
+        </div>
+      </section>`;
+  }
+
   function renderLearn() {
+    if (state.showDataModal) {
+      app.innerHTML = renderDataModal();
+      return;
+    }
+
     const list = visible();
     const pinned = state.pin ? BY_ID.get(state.pin) : null;
     const c = counts();
+
     if (!list.length && !pinned) {
-      app.innerHTML = `<p class="status"><span>${c.seen} von ${c.total} gesehen · ${c.ok} richtig · ${c.bad} falsch</span></p>
-        <p>In dieser Liste ist nichts. Filter auf „Alle“ stellen oder erst ein paar Fragen lernen.</p>`;
+      app.innerHTML = `
+        <div class="status">
+          <span>${c.seen} von ${c.total} gesehen · ${c.ok} richtig · ${c.bad} falsch · ${c.star} gemerkt</span>
+          <span class="filters">
+            <button type="button" class="text-btn ${state.filter === "all" ? "on" : ""}" data-act="filter" data-filter="all">Alle</button>
+            <button type="button" class="text-btn ${state.filter === "new" ? "on" : ""}" data-act="filter" data-filter="new">Neu</button>
+            <button type="button" class="text-btn ${state.filter === "bad" ? "on" : ""}" data-act="filter" data-filter="bad">Falsch (${c.bad})</button>
+            <button type="button" class="text-btn ${state.filter === "star" ? "on" : ""}" data-act="filter" data-filter="star">Gemerkt (${c.star})</button>
+          </span>
+        </div>
+        <p>In dieser Liste ist noch nichts. Wähle „Alle“ oder merke dir Fragen mit dem Stern.</p>`;
       return;
     }
+
+    if (state.doneList) {
+      app.innerHTML = `
+        <div class="status">
+          <span>Auswahl abgeschlossen · ${c.seen} gesehen · ${c.ok} richtig · ${c.bad} falsch</span>
+        </div>
+        <article class="card done-card">
+          <h2>Auswahl abgeschlossen 🎉</h2>
+          <p>Du hast alle Fragen in diesem Filter durchgesehen.</p>
+          <div class="row">
+            <button type="button" class="go" data-act="restart-filter">Von vorne wiederholen</button>
+            ${c.bad > 0 ? `<button type="button" class="text-btn" data-act="filter" data-filter="bad">Nur Fehler üben (${c.bad})</button>` : ""}
+            <button type="button" class="text-btn" data-act="filter" data-filter="all">Alle Fragen anzeigen</button>
+          </div>
+        </article>`;
+      return;
+    }
+
     if (state.index >= list.length) state.index = Math.max(0, list.length - 1);
     if (state.index < 0) state.index = 0;
     const q = pinned || list[state.index];
     const revealed = state.revealed;
     const pick = state.pick;
+    const isStarred = Boolean(state.stars[q.id]);
+
     const opts = q.options.map((text, i) =>
-      `<button type="button" class="${optionClass(q, i, revealed, pick)}" data-act="pick" data-i="${i}" ${revealed ? "disabled" : ""}>
+      `<button type="button" class="${optionClass(q, i, revealed, pick)}" data-act="pick" data-i="${i}" role="radio" aria-checked="${i === pick ? "true" : "false"}" ${revealed ? "disabled" : ""}>
         <span class="box" aria-hidden="true"></span><span>${decorate(text)}</span>
       </button>`
     ).join("");
+
     let verdict = "";
     if (revealed) {
       const good = pick === q.correct;
@@ -239,24 +319,35 @@
         ? `<p class="mark ok">Richtig.</p>`
         : `<p class="mark bad">Falsch. Im Lernschlüssel: ${esc(q.options[q.correct])}</p>`;
     }
+
     const hint = state.hint
-      ? `<p class="hintline" lang="uk"><b>${esc(state.hintWord || "")}</b> — ${esc(state.hint)}</p>`
+      ? `<div class="hintline" lang="uk">
+          <span><b>${esc(state.hintWord || "")}</b> — ${esc(state.hint)}</span>
+          <button type="button" class="hint-close" data-act="close-hint" title="Schließen" aria-label="Schließen">×</button>
+        </div>`
       : "";
+
     app.innerHTML = `
       <div class="status">
         <span>Frage ${state.index + 1} von ${list.length} · ${c.seen} gesehen · ${c.ok} richtig · ${c.bad} falsch</span>
         <span class="filters" ${state.mode === "wrong" ? "hidden" : ""}>
           <button type="button" class="text-btn ${state.filter === "all" ? "on" : ""}" data-act="filter" data-filter="all">Alle</button>
           <button type="button" class="text-btn ${state.filter === "new" ? "on" : ""}" data-act="filter" data-filter="new">Neu</button>
-          <button type="button" class="text-btn ${state.filter === "bad" ? "on" : ""}" data-act="filter" data-filter="bad">Falsch</button>
+          <button type="button" class="text-btn ${state.filter === "bad" ? "on" : ""}" data-act="filter" data-filter="bad">Falsch (${c.bad})</button>
+          <button type="button" class="text-btn ${state.filter === "star" ? "on" : ""}" data-act="filter" data-filter="star">Gemerkt (${c.star})</button>
         </span>
       </div>
       <article class="card">
-        <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
+        <div class="q-header">
+          <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
+          <button type="button" class="star-btn ${isStarred ? "on" : ""}" data-act="toggle-star" data-id="${esc(q.id)}" title="${isStarred ? "Aus Gemerkt entfernen" : "Frage merken"}">
+            ${isStarred ? "★ Gemerkt" : "☆ Merken"}
+          </button>
+        </div>
         <p class="q-text">${decorate(q.question)}</p>
         ${hint}
         ${figureFor(q)}
-        <div class="options">${opts}</div>
+        <div class="options" role="radiogroup">${opts}</div>
         ${verdict}
       </article>
       <div class="row">
@@ -267,6 +358,11 @@
   }
 
   function renderExam() {
+    if (state.showDataModal) {
+      app.innerHTML = renderDataModal();
+      return;
+    }
+
     const exam = state.exam;
     if (!exam) {
       const landName = (LANDS.find((row) => row[0] === state.land) || ["", state.land])[1];
@@ -280,6 +376,7 @@
         </section>`;
       return;
     }
+
     if (exam.done) {
       const score = exam.done.score;
       const course = score >= 15;
@@ -290,6 +387,7 @@
         const yours = pick === 0 || pick > 0 ? q.options[pick] : "keine Antwort";
         return `<li><button type="button" data-act="open" data-id="${esc(id)}">${esc(q.land || "Allgemein")} ${q.num}</button><br>${esc(q.question)}<br><span class="quiet">Deine Antwort: ${esc(yours)}. Lernschlüssel: ${esc(q.options[q.correct])}</span></li>`;
       }).join("");
+
       app.innerHTML = `
         <section class="result card">
           <h2>${score} von 33</h2>
@@ -299,46 +397,82 @@
           </div>
           ${items ? `<h3>Falsch oder offen</h3><ol class="miss-list">${items}</ol>` : "<p>Keine Fehler in diesem Durchgang.</p>"}
           <div class="row">
-            <button type="button" class="go" data-act="close-exam">Schließen</button>
+            <button type="button" class="go" data-act="start-exam">Neue Prüfung starten</button>
+            <button type="button" class="text-btn" data-act="close-exam">Schließen</button>
             <button type="button" class="text-btn" data-act="study-wrong">Diese Fehler lernen</button>
           </div>
         </section>`;
       return;
     }
+
     const q = BY_ID.get(exam.ids[exam.i]);
     const pick = Object.prototype.hasOwnProperty.call(exam.picks, q.id) ? exam.picks[q.id] : null;
     const left = remaining();
+
+    const gridCells = exam.ids.map((id, idx) => {
+      const isCurrent = idx === exam.i;
+      const isPicked = Object.prototype.hasOwnProperty.call(exam.picks, id);
+      let cls = "exam-cell";
+      if (isCurrent) cls += " current";
+      if (isPicked) cls += " picked";
+      return `<button type="button" class="${cls}" data-act="exam-jump" data-idx="${idx}" title="Frage ${idx + 1}">${idx + 1}</button>`;
+    }).join("");
+
+    const unpicked = exam.ids.length - Object.keys(exam.picks).length;
+    const confirmBox = state.confirmSubmit
+      ? `<div class="confirm-box">
+          <p><strong>Unbeantwortete Fragen:</strong> Du hast ${unpicked} von 33 Fragen noch nicht beantwortet.</p>
+          <p class="quiet">Unbeantwortete Fragen gelten als nicht bestanden.</p>
+          <div class="row">
+            <button type="button" class="go" data-act="confirm-submit-exam">Ja, jetzt abgeben</button>
+            <button type="button" class="text-btn" data-act="cancel-submit-exam">Weiter bearbeiten</button>
+          </div>
+        </div>`
+      : "";
+
     const opts = q.options.map((text, i) =>
-      `<button type="button" class="${optionClass(q, i, false, pick)}" data-act="exam-pick" data-i="${i}">
+      `<button type="button" class="${optionClass(q, i, false, pick)}" data-act="exam-pick" data-i="${i}" role="radio" aria-checked="${i === pick ? "true" : "false"}">
         <span class="box" aria-hidden="true"></span><span>${esc(text)}</span>
       </button>`
     ).join("");
+
     app.innerHTML = `
-      <div class="status">
-        <span>Frage ${exam.i + 1} von 33</span>
-        <span id="clock" class="clock ${left < 5 * 60 * 1000 ? "low" : ""}">${clock(left)}</span>
+      <div class="exam-status-bar">
+        <div class="status">
+          <span>Frage ${exam.i + 1} von 33 · ${Object.keys(exam.picks).length}/33 beantwortet</span>
+          <span id="clock" class="clock ${left < 5 * 60 * 1000 ? "low" : ""}">${clock(left)}</span>
+        </div>
+        <div class="exam-grid">${gridCells}</div>
       </div>
+      ${confirmBox}
       <article class="card">
         <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
         <p class="q-text">${esc(q.question)}</p>
         ${figureFor(q)}
-        <div class="options">${opts}</div>
+        <div class="options" role="radiogroup">${opts}</div>
       </article>
       <div class="row">
         <button type="button" class="text-btn" data-act="exam-prev" ${exam.i === 0 ? "disabled" : ""}>Zurück</button>
-        <button type="button" class="text-btn" data-act="exam-next">Weiter</button>
+        <button type="button" class="text-btn" data-act="exam-next" ${exam.i === exam.ids.length - 1 ? "disabled" : ""}>Weiter</button>
         <button type="button" class="go" data-act="submit-exam">Abgeben</button>
       </div>`;
   }
 
   function renderGrid() {
+    if (state.showDataModal) {
+      app.innerHTML = renderDataModal();
+      return;
+    }
+
     const all = pool();
     const general = all.filter((q) => q.land === null);
     const local = all.filter((q) => q.land);
     const cell = (q) => {
       const row = state.stats[q.id];
-      const cls = row ? row.last : "";
-      return `<button type="button" class="${cls}" data-act="open" data-id="${esc(q.id)}">${q.num}</button>`;
+      const isStarred = Boolean(state.stars[q.id]);
+      let cls = row ? row.last : "";
+      if (isStarred) cls = (cls ? cls + " " : "") + "starred";
+      return `<button type="button" class="${cls}" data-act="open" data-id="${esc(q.id)}" title="${isStarred ? "★ Gemerkt" : ""}">${q.num}</button>`;
     };
     const landName = (LANDS.find((row) => row[0] === state.land) || ["", ""])[1];
     app.innerHTML = `
@@ -365,6 +499,7 @@
   function openQuestion(id) {
     state.mode = "learn";
     state.filter = "all";
+    state.doneList = false;
     const list = visible();
     const idx = list.findIndex((q) => q.id === id);
     state.index = idx < 0 ? 0 : idx;
@@ -372,6 +507,8 @@
     state.pick = null;
     state.hint = null;
     state.pin = null;
+    state.showDataModal = false;
+    save();
     render();
   }
 
@@ -379,23 +516,36 @@
     const el = event.target.closest("[data-act], [data-mode]");
     if (!el) return;
     const act = el.dataset.act;
+
     if (el.dataset.mode) {
       state.mode = el.dataset.mode;
       state.revealed = false;
       state.pick = null;
       state.hint = null;
       state.pin = null;
+      state.doneList = false;
+      state.showDataModal = false;
       if (state.mode === "wrong") state.filter = "bad";
       if (state.mode === "learn" && state.filter === "bad") state.filter = "all";
+      save();
       render();
       return;
     }
+
+    if (act === "close-hint") {
+      state.hint = null;
+      state.hintWord = null;
+      render();
+      return;
+    }
+
     if (act === "hint") {
       state.hint = el.dataset.hint;
       state.hintWord = el.textContent;
       render();
       return;
     }
+
     if (act === "toggle-hints") {
       state.hints = !state.hints;
       state.hint = null;
@@ -403,6 +553,12 @@
       render();
       return;
     }
+
+    if (act === "toggle-star") {
+      toggleStar(el.dataset.id);
+      return;
+    }
+
     if (act === "filter") {
       state.filter = el.dataset.filter;
       state.index = 0;
@@ -410,9 +566,24 @@
       state.pick = null;
       state.hint = null;
       state.pin = null;
+      state.doneList = false;
+      save();
       render();
       return;
     }
+
+    if (act === "restart-filter") {
+      state.index = 0;
+      state.revealed = false;
+      state.pick = null;
+      state.hint = null;
+      state.pin = null;
+      state.doneList = false;
+      save();
+      render();
+      return;
+    }
+
     if (act === "pick") {
       if (state.revealed) return;
       const list = visible();
@@ -424,35 +595,58 @@
       render();
       return;
     }
+
     if (act === "next") {
+      const list = visible();
       const pinned = state.pin;
-      const stillThere = pinned && visible().some((q) => q.id === pinned);
+      const stillThere = pinned && list.some((q) => q.id === pinned);
       state.pin = null;
       state.revealed = false;
       state.pick = null;
       state.hint = null;
-      if (stillThere && state.index < visible().length - 1) state.index += 1;
-      if (!stillThere && state.index >= visible().length) state.index = Math.max(0, visible().length - 1);
+
+      if (stillThere && state.index < list.length - 1) {
+        state.index += 1;
+      } else if (!stillThere && state.index >= list.length) {
+        state.index = Math.max(0, list.length - 1);
+      } else if (state.index >= list.length - 1) {
+        state.doneList = true;
+      }
+      save();
       render();
       return;
     }
+
     if (act === "prev") {
       if (state.index > 0) state.index -= 1;
       state.revealed = false;
       state.pick = null;
       state.hint = null;
       state.pin = null;
+      state.doneList = false;
+      save();
       render();
       return;
     }
+
     if (act === "open") {
       openQuestion(el.dataset.id);
       return;
     }
+
     if (act === "start-exam") {
       startExam();
       return;
     }
+
+    if (act === "exam-jump") {
+      state.exam.i = Number(el.dataset.idx);
+      state.confirmSubmit = false;
+      save();
+      render();
+      return;
+    }
+
     if (act === "exam-pick") {
       const exam = state.exam;
       const q = BY_ID.get(exam.ids[exam.i]);
@@ -461,29 +655,57 @@
       render();
       return;
     }
+
     if (act === "exam-next") {
       if (state.exam.i < state.exam.ids.length - 1) state.exam.i += 1;
+      state.confirmSubmit = false;
       save();
       render();
       return;
     }
+
     if (act === "exam-prev") {
       if (state.exam.i > 0) state.exam.i -= 1;
+      state.confirmSubmit = false;
       save();
       render();
       return;
     }
+
     if (act === "submit-exam") {
+      const exam = state.exam;
+      const unpicked = exam.ids.length - Object.keys(exam.picks).length;
+      if (unpicked > 0 && !state.confirmSubmit) {
+        state.confirmSubmit = true;
+        render();
+        return;
+      }
+      state.confirmSubmit = false;
       finishExam();
       return;
     }
+
+    if (act === "confirm-submit-exam") {
+      state.confirmSubmit = false;
+      finishExam();
+      return;
+    }
+
+    if (act === "cancel-submit-exam") {
+      state.confirmSubmit = false;
+      render();
+      return;
+    }
+
     if (act === "close-exam") {
       state.exam = null;
       state.mode = "learn";
+      state.confirmSubmit = false;
       save();
       render();
       return;
     }
+
     if (act === "study-wrong") {
       state.exam = null;
       state.mode = "wrong";
@@ -492,9 +714,80 @@
       state.revealed = false;
       state.pick = null;
       state.pin = null;
+      state.doneList = false;
       save();
       render();
+      return;
     }
+
+    if (act === "close-data-modal") {
+      state.showDataModal = false;
+      render();
+      return;
+    }
+
+    if (act === "export-data") {
+      const payload = {
+        app: "lid-klasse",
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        land: state.land,
+        stats: state.stats,
+        stars: state.stars,
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `lid-klasse-fortschritt-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      const msg = document.getElementById("data-msg");
+      if (msg) msg.textContent = "Fortschritt wurde als Datei heruntergeladen.";
+      return;
+    }
+
+    if (act === "reset-data") {
+      if (window.confirm("Möchtest du wirklich deinen gesamten Lernfortschritt zurücksetzen?")) {
+        state.stats = {};
+        state.stars = {};
+        save();
+        const msg = document.getElementById("data-msg");
+        if (msg) msg.textContent = "Statistik wurde erfolgreich zurückgesetzt.";
+        render();
+      }
+      return;
+    }
+  }
+
+  function handleFileImport(event) {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      try {
+        const parsed = JSON.parse(e.target.result);
+        if (parsed && typeof parsed.stats === "object") {
+          state.stats = Object.assign(state.stats || {}, parsed.stats);
+          if (parsed.stars && typeof parsed.stars === "object") {
+            state.stars = Object.assign(state.stars || {}, parsed.stars);
+          }
+          if (parsed.land && LANDS.some(([code]) => code === parsed.land)) {
+            state.land = parsed.land;
+            landSelect.value = state.land;
+          }
+          save();
+          const msg = document.getElementById("data-msg");
+          if (msg) msg.textContent = "Fortschritt erfolgreich importiert!";
+          render();
+        } else {
+          alert("Ungültiges Dateiformat. JSON mit 'stats' erwartet.");
+        }
+      } catch (err) {
+        alert("Fehler beim Lesen der Datei: " + err.message);
+      }
+    };
+    reader.readAsText(file);
   }
 
   function applyTheme() {
@@ -517,23 +810,86 @@
     state.index = 0;
     state.revealed = false;
     state.pick = null;
+    state.doneList = false;
     save();
     render();
   });
+
   themeBtn.addEventListener("click", () => {
     const dark = themeBtn.textContent === "Nacht";
     state.theme = dark ? "dark" : "light";
     save();
     applyTheme();
   });
+
+  if (dataBtn) {
+    dataBtn.addEventListener("click", () => {
+      state.showDataModal = !state.showDataModal;
+      render();
+    });
+  }
+
   document.body.addEventListener("click", onClick);
+  document.body.addEventListener("change", (e) => {
+    if (e.target && e.target.dataset && e.target.dataset.act === "import-file") {
+      handleFileImport(e);
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
-    if (event.target.closest("select, input")) return;
+    if (event.target.closest("select, input, textarea")) return;
+
     const n = Number(event.key);
     if (n >= 1 && n <= 4) {
       const selector = state.mode === "exam" ? `[data-act="exam-pick"][data-i="${n - 1}"]` : `[data-act="pick"][data-i="${n - 1}"]`;
       const btn = app.querySelector(selector);
+      if (btn && !btn.disabled) {
+        btn.click();
+        return;
+      }
+    }
+
+    if (event.key === "Enter" || event.key === " ") {
+      if (state.mode === "learn" && state.revealed) {
+        event.preventDefault();
+        const nextBtn = app.querySelector('[data-act="next"]');
+        if (nextBtn) nextBtn.click();
+        return;
+      }
+    }
+
+    if (event.key === "ArrowRight" || event.key === "n") {
+      event.preventDefault();
+      const selector = state.mode === "exam" ? '[data-act="exam-next"]' : '[data-act="next"]';
+      const btn = app.querySelector(selector);
       if (btn && !btn.disabled) btn.click();
+      return;
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "p") {
+      event.preventDefault();
+      const selector = state.mode === "exam" ? '[data-act="exam-prev"]' : '[data-act="prev"]';
+      const btn = app.querySelector(selector);
+      if (btn && !btn.disabled) btn.click();
+      return;
+    }
+
+    if (event.key === "Escape") {
+      if (state.hint) {
+        state.hint = null;
+        render();
+        return;
+      }
+      if (state.confirmSubmit) {
+        state.confirmSubmit = false;
+        render();
+        return;
+      }
+      if (state.showDataModal) {
+        state.showDataModal = false;
+        render();
+        return;
+      }
     }
   });
 
