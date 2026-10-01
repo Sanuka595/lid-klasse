@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe4">
+  <title>lid-klasse</title>
+  <link rel="icon" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="name">lid-klasse</span>
+      <span class="sub">Leben in Deutschland</span>
+    </div>
+    <div class="tools">
+      <label>Land
+        <select id="land"></select>
+      </label>
+      <button type="button" id="theme">Nacht</button>
+    </div>
+  </header>
+  <nav class="modes" aria-label="Modus">
+    <button type="button" data-mode="learn" class="on">Lernen</button>
+    <button type="button" data-mode="wrong">Nur Fehler</button>
+    <button type="button" data-mode="exam">Prüfung</button>
+    <button type="button" data-mode="grid">Übersicht</button>
+  </nav>
+  <main id="app"></main>
+  <footer class="foot">
+    <p>Fragen nach dem Gesamtfragenkatalog des BAMF, Stand 07.05.2025. Kein Angebot des BAMF. Der Antwortschlüssel ist ein Lernschlüssel.</p>
+    <p>Fotos aus dem Katalog werden hier nicht gezeigt. Fortschritt bleibt in diesem Browser. Cache nicht löschen.</p>
+    <p><a href="https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.html">Katalog auf bamf.de</a></p>
+  </footer>
+  <script src="questions.js"></script>
+  <script src="glossary.js"></script>
+  <script src="figures.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

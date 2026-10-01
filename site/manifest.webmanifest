@@ -1,0 +1,14 @@
+{
+  "name": "lid-klasse",
+  "short_name": "lid-klasse",
+  "description": "Übungsheft zum Test Leben in Deutschland",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e6",
+  "theme_color": "#f4f0e6",
+  "lang": "de",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

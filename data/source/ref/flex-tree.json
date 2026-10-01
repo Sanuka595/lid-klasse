@@ -1,0 +1,2256 @@
+{
+  "sha": "4722a692c6d93241d970c632104ed2a382b1815b",
+  "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/4722a692c6d93241d970c632104ed2a382b1815b",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fba70d139f4b4e57a727642d8a41457fb47fb3fc",
+      "size": 1749,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/fba70d139f4b4e57a727642d8a41457fb47fb3fc"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c768be674e7ceaeccb182e6267d6e2d7b63e1fb",
+      "size": 464,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6c768be674e7ceaeccb182e6267d6e2d7b63e1fb"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cb229402b052069c0def498230894c65509ad3d",
+      "size": 1067,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0cb229402b052069c0def498230894c65509ad3d"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0740af913871daf94023affd98f0637de23eaef4",
+      "size": 4258,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0740af913871daf94023affd98f0637de23eaef4"
+    },
+    {
+      "path": "app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "82e7a002c1ebb5e15395a301a026f46cd3a2317f",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/82e7a002c1ebb5e15395a301a026f46cd3a2317f"
+    },
+    {
+      "path": "app/mobile-expo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b1a81a767842e4052efdce2fab13364610002386",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/b1a81a767842e4052efdce2fab13364610002386"
+    },
+    {
+      "path": "app/mobile-expo/app.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5824eed8863016c3373fd00b4c36ec5ffcc74030",
+      "size": 815,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5824eed8863016c3373fd00b4c36ec5ffcc74030"
+    },
+    {
+      "path": "app/mobile-expo/babel.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1e3637afdf18539e541c2a3c59373493ac6a36f",
+      "size": 105,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e1e3637afdf18539e541c2a3c59373493ac6a36f"
+    },
+    {
+      "path": "app/mobile-expo/index.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67a5d5487dd14b4609216a69dcf339291b2e7c83",
+      "size": 475,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/67a5d5487dd14b4609216a69dcf339291b2e7c83"
+    },
+    {
+      "path": "app/mobile-expo/metro.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00b8ce496a59fa205fde60cf9ce551a1a5f5ca1b",
+      "size": 1821,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/00b8ce496a59fa205fde60cf9ce551a1a5f5ca1b"
+    },
+    {
+      "path": "app/mobile-expo/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0b85657570a2169629e2ce807d4a7e11e558f9e",
+      "size": 1231,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b0b85657570a2169629e2ce807d4a7e11e558f9e"
+    },
+    {
+      "path": "app/mobile-expo/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9e56c7416334fcbf16fcfba20e92d623e6e97d89",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/9e56c7416334fcbf16fcfba20e92d623e6e97d89"
+    },
+    {
+      "path": "app/mobile-expo/src/persistence.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0723199b27b8b24845a8d8f35825d42ecdc2eb11",
+      "size": 99,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0723199b27b8b24845a8d8f35825d42ecdc2eb11"
+    },
+    {
+      "path": "app/mobile-expo/src/platform.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2a449288b921ba2dcc3fbd956383437cfa441fc",
+      "size": 589,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c2a449288b921ba2dcc3fbd956383437cfa441fc"
+    },
+    {
+      "path": "app/mobile-expo/tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9acfcf5e5b8cc02020327eb109ba36c0dce2c835",
+      "size": 384,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/9acfcf5e5b8cc02020327eb109ba36c0dce2c835"
+    },
+    {
+      "path": "app/mobile",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0574c24a9c9a69e5593d88e6c72f6cb3bbf516d4",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/0574c24a9c9a69e5593d88e6c72f6cb3bbf516d4"
+    },
+    {
+      "path": "app/mobile/.bundle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c3249afc565ace28458d2bf31d87adf72de8cd79",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/c3249afc565ace28458d2bf31d87adf72de8cd79"
+    },
+    {
+      "path": "app/mobile/.bundle/config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "848943bb5274b1ec80390e731e8de3b9f5812d16",
+      "size": 59,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/848943bb5274b1ec80390e731e8de3b9f5812d16"
+    },
+    {
+      "path": "app/mobile/.eslintrc.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "187894b6af25ee34da3116166b4eeffaa07b622a",
+      "size": 64,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/187894b6af25ee34da3116166b4eeffaa07b622a"
+    },
+    {
+      "path": "app/mobile/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de99955957c48594133a526c4359ee75a9d9b7ef",
+      "size": 1085,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/de99955957c48594133a526c4359ee75a9d9b7ef"
+    },
+    {
+      "path": "app/mobile/.prettierrc.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06860c8d1b12940e9f5127244170c67397e648be",
+      "size": 91,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/06860c8d1b12940e9f5127244170c67397e648be"
+    },
+    {
+      "path": "app/mobile/.watchmanconfig",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "size": 3,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0967ef424bce6791893e9a57bb952f80fd536e93"
+    },
+    {
+      "path": "app/mobile/App.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83a87ce83702fb0658e7ed0caf3e0b762f5abe8f",
+      "size": 298,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/83a87ce83702fb0658e7ed0caf3e0b762f5abe8f"
+    },
+    {
+      "path": "app/mobile/Gemfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a4c5f17185ceabfc19866a983352abc52eda47d",
+      "size": 510,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6a4c5f17185ceabfc19866a983352abc52eda47d"
+    },
+    {
+      "path": "app/mobile/Gemfile.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d8e20c07bd6819d5030a539abab6a2711f9309c",
+      "size": 2722,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2d8e20c07bd6819d5030a539abab6a2711f9309c"
+    },
+    {
+      "path": "app/mobile/android",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ab3326442410404d9acddd852aaa3ac0b2ee4b1",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/2ab3326442410404d9acddd852aaa3ac0b2ee4b1"
+    },
+    {
+      "path": "app/mobile/android/app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b3d1061a6a270326a745ec55ebf6f726f2a8fe78",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/b3d1061a6a270326a745ec55ebf6f726f2a8fe78"
+    },
+    {
+      "path": "app/mobile/android/app/build.gradle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e8d9d38f96e01aeca50a4ee5052125cb08e5243",
+      "size": 5451,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6e8d9d38f96e01aeca50a4ee5052125cb08e5243"
+    },
+    {
+      "path": "app/mobile/android/app/debug.keystore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "364e105ed39fbfd62001429a68140672b06ec0de",
+      "size": 2257,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/364e105ed39fbfd62001429a68140672b06ec0de"
+    },
+    {
+      "path": "app/mobile/android/app/proguard-rules.pro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "793f5d492055d078fbc5c6e6f2efdbe196a95471",
+      "size": 1023,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/793f5d492055d078fbc5c6e6f2efdbe196a95471"
+    },
+    {
+      "path": "app/mobile/android/app/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "70cfbf66eb31a30a9c2ed9f30e9c384e4d7e9cd6",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/70cfbf66eb31a30a9c2ed9f30e9c384e4d7e9cd6"
+    },
+    {
+      "path": "app/mobile/android/app/src/debug",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b0feba350bb888e4b8233ba2155579b3a82d19f",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/0b0feba350bb888e4b8233ba2155579b3a82d19f"
+    },
+    {
+      "path": "app/mobile/android/app/src/debug/AndroidManifest.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb98c01afd79a6ca551b3b638dc4a048d1315fb4",
+      "size": 313,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/eb98c01afd79a6ca551b3b638dc4a048d1315fb4"
+    },
+    {
+      "path": "app/mobile/android/app/src/debug/res",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1f2bb26104e838e248d0dec369483e258e34eabd",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/1f2bb26104e838e248d0dec369483e258e34eabd"
+    },
+    {
+      "path": "app/mobile/android/app/src/debug/res/values",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67b1be6365a0c84f1549e0b1df37bf466a6b4031",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/67b1be6365a0c84f1549e0b1df37bf466a6b4031"
+    },
+    {
+      "path": "app/mobile/android/app/src/debug/res/values/strings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "627b481025d9481fed83cc159efca3bb72017e38",
+      "size": 78,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/627b481025d9481fed83cc159efca3bb72017e38"
+    },
+    {
+      "path": "app/mobile/android/app/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "562b6daa5b35ddef3a58f74ad1d18c4e31504195",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/562b6daa5b35ddef3a58f74ad1d18c4e31504195"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/AndroidManifest.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08c06c975a036b0459be519d61198c7bcbbd404c",
+      "size": 1055,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/08c06c975a036b0459be519d61198c7bcbbd404c"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/java",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec7d49083144d81f33b200635e368bbf6cb8354f",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/ec7d49083144d81f33b200635e368bbf6cb8354f"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/java/org",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4870f545c76f46a183d89c5f50021454199d35c0",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/4870f545c76f46a183d89c5f50021454199d35c0"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/java/org/ebtest",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4cd6ddc5faa804a484c31f5a77d68dafc437bd7",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/d4cd6ddc5faa804a484c31f5a77d68dafc437bd7"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/java/org/ebtest/MainActivity.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06cd0c9668f68aa6c2a206e0b9fa41c07aa306b2",
+      "size": 1126,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/06cd0c9668f68aa6c2a206e0b9fa41c07aa306b2"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/java/org/ebtest/MainApplication.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26d36f5463140df65fff773ca02f0907ee3e5e70",
+      "size": 813,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/26d36f5463140df65fff773ca02f0907ee3e5e70"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71241b9ca0c453cdb39e99103c8b3ac6ff7ec337",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/71241b9ca0c453cdb39e99103c8b3ac6ff7ec337"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/drawable",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "296b11fe0e7d1bd29ccb25c0d959bf31667b816d",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/296b11fe0e7d1bd29ccb25c0d959bf31667b816d"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/drawable/rn_edit_text_material.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c25e728ea2ce7724bd9ef08c87ce7ee89c77103",
+      "size": 1917,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5c25e728ea2ce7724bd9ef08c87ce7ee89c77103"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-hdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d77683593b65ca45407d129fcd3a4b7ace561c61",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/d77683593b65ca45407d129fcd3a4b7ace561c61"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b105da5269c723c78020e7c08c46d0749866849e",
+      "size": 3854,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b105da5269c723c78020e7c08c46d0749866849e"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b105da5269c723c78020e7c08c46d0749866849e",
+      "size": 3854,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b105da5269c723c78020e7c08c46d0749866849e"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-mdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c8595ece40790ebf042e0e124a1d64e26e52fde9",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/c8595ece40790ebf042e0e124a1d64e26e52fde9"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ff0d1efcecfa8201fe8e99ad94079de0ac6b795",
+      "size": 2267,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4ff0d1efcecfa8201fe8e99ad94079de0ac6b795"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ff0d1efcecfa8201fe8e99ad94079de0ac6b795",
+      "size": 2267,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4ff0d1efcecfa8201fe8e99ad94079de0ac6b795"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c94405b14df2d20983b60d8ace0d155277e92032",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/c94405b14df2d20983b60d8ace0d155277e92032"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d04e732fe70b28d0d6e31237abd3257848d29d30",
+      "size": 5644,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d04e732fe70b28d0d6e31237abd3257848d29d30"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d04e732fe70b28d0d6e31237abd3257848d29d30",
+      "size": 5644,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d04e732fe70b28d0d6e31237abd3257848d29d30"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7c12581ed52a4c0fcc3df0cfe94b6fff52f9ca4",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/d7c12581ed52a4c0fcc3df0cfe94b6fff52f9ca4"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f686c7ff889eb9a1358cf6bc6a6fc13d0e6e1e9b",
+      "size": 10117,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f686c7ff889eb9a1358cf6bc6a6fc13d0e6e1e9b"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f686c7ff889eb9a1358cf6bc6a6fc13d0e6e1e9b",
+      "size": 10117,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f686c7ff889eb9a1358cf6bc6a6fc13d0e6e1e9b"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxxhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dd1bf46df70626c994ef2e0f62a3148580162941",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/dd1bf46df70626c994ef2e0f62a3148580162941"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d1de6bd50e162776a558f065fa99f0607a80977",
+      "size": 15748,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4d1de6bd50e162776a558f065fa99f0607a80977"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d1de6bd50e162776a558f065fa99f0607a80977",
+      "size": 15748,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4d1de6bd50e162776a558f065fa99f0607a80977"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/values-night",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed157720f9938e3e109f319c358e9a79b0d6a95c",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/ed157720f9938e3e109f319c358e9a79b0d6a95c"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/values-night/styles.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23a9862184bca8f7c22a1e17742a9b4d5a31317f",
+      "size": 803,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/23a9862184bca8f7c22a1e17742a9b4d5a31317f"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/values",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f70a1356c8d9e4604266efe9af47179e1e38d632",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/f70a1356c8d9e4604266efe9af47179e1e38d632"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/values/strings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "268c56033df415553a9502eb4ca0b465873dc331",
+      "size": 74,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/268c56033df415553a9502eb4ca0b465873dc331"
+    },
+    {
+      "path": "app/mobile/android/app/src/main/res/values/styles.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dc0e6b5dc2c7be2dd267c32270d8c16ad7bc50d",
+      "size": 917,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6dc0e6b5dc2c7be2dd267c32270d8c16ad7bc50d"
+    },
+    {
+      "path": "app/mobile/android/build.gradle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb88aeee66cd35486460b13625f057f0eb3d6756",
+      "size": 547,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/fb88aeee66cd35486460b13625f057f0eb3d6756"
+    },
+    {
+      "path": "app/mobile/android/gradle.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3088b75cea4b8159b9d1c18ea912711f120aafab",
+      "size": 1866,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3088b75cea4b8159b9d1c18ea912711f120aafab"
+    },
+    {
+      "path": "app/mobile/android/gradle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52d834cbbe59c742930f8df0d3969a770c39f6ab",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/52d834cbbe59c742930f8df0d3969a770c39f6ab"
+    },
+    {
+      "path": "app/mobile/android/gradle/wrapper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c92ab90a010a6459330e2172ab4dee3d5adc735b",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/c92ab90a010a6459330e2172ab4dee3d5adc735b"
+    },
+    {
+      "path": "app/mobile/android/gradle/wrapper/gradle-wrapper.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b33c55baabb587c669f562ae36f953de2481846",
+      "size": 43764,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1b33c55baabb587c669f562ae36f953de2481846"
+    },
+    {
+      "path": "app/mobile/android/gradle/wrapper/gradle-wrapper.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c61a118f7ddb21223f1a2fdd05f6aec1b9863aec",
+      "size": 252,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c61a118f7ddb21223f1a2fdd05f6aec1b9863aec"
+    },
+    {
+      "path": "app/mobile/android/gradlew",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "23d15a9367071145e9c79bb4ddf879d1fbe78b5d",
+      "size": 8733,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/23d15a9367071145e9c79bb4ddf879d1fbe78b5d"
+    },
+    {
+      "path": "app/mobile/android/gradlew.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11bf1829284c14651865266414892ba8f0e2477d",
+      "size": 3134,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/11bf1829284c14651865266414892ba8f0e2477d"
+    },
+    {
+      "path": "app/mobile/android/settings.gradle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b269732739e88ae0a7ff70f363e6769d30e6b029",
+      "size": 337,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b269732739e88ae0a7ff70f363e6769d30e6b029"
+    },
+    {
+      "path": "app/mobile/app.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cd68dc906dc3d42cf34dd472a9ff9a75e51f42a",
+      "size": 50,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1cd68dc906dc3d42cf34dd472a9ff9a75e51f42a"
+    },
+    {
+      "path": "app/mobile/babel.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7b3da3b33d1565e14c6aaf8884dc3d24c457992",
+      "size": 72,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f7b3da3b33d1565e14c6aaf8884dc3d24c457992"
+    },
+    {
+      "path": "app/mobile/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab0ecbf4f87881c29072fad6c64950ba609803f2",
+      "size": 167,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ab0ecbf4f87881c29072fad6c64950ba609803f2"
+    },
+    {
+      "path": "app/mobile/ios",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4ac4721ae390611f9cb6bfb04d3557e5e1d79db",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/e4ac4721ae390611f9cb6bfb04d3557e5e1d79db"
+    },
+    {
+      "path": "app/mobile/ios/.xcode.env",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d5782c71568d32eec2fe71b034efcde053305f9",
+      "size": 482,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3d5782c71568d32eec2fe71b034efcde053305f9"
+    },
+    {
+      "path": "app/mobile/ios/Podfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c690f315f7193206feabab903787883c192bccd8",
+      "size": 1034,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c690f315f7193206feabab903787883c192bccd8"
+    },
+    {
+      "path": "app/mobile/ios/Podfile.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2ef4a42eda84a0fca9c5f7483439f62eca36491",
+      "size": 66232,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d2ef4a42eda84a0fca9c5f7483439f62eca36491"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "601ca2e742d6bd0e2c62d3ad55253a3a72a9a424",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/601ca2e742d6bd0e2c62d3ad55253a3a72a9a424"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97dde6151729bb37ef881708d5b3baf7a534c0d9",
+      "size": 19105,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/97dde6151729bb37ef881708d5b3baf7a534c0d9"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcodeproj/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8716b39020571d053d3a4570b50abf1cd0803bdb",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/8716b39020571d053d3a4570b50abf1cd0803bdb"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcodeproj/xcshareddata/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c37a08e98a69cf5833f32ce0a09a53467fd84cac",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/c37a08e98a69cf5833f32ce0a09a53467fd84cac"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcodeproj/xcshareddata/xcschemes/mobile.xcscheme",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85dd574e01a99eab6c0b35e5ba0f7ed95534e6e3",
+      "size": 3258,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/85dd574e01a99eab6c0b35e5ba0f7ed95534e6e3"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1018521555f23e55a897fa13df2d10d41b513fac",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/1018521555f23e55a897fa13df2d10d41b513fac"
+    },
+    {
+      "path": "app/mobile/ios/mobile.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3c620192822504dd51f37872778d4e74c63d91b",
+      "size": 224,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f3c620192822504dd51f37872778d4e74c63d91b"
+    },
+    {
+      "path": "app/mobile/ios/mobile",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fea2578f131db816484bdb05fd5bb7372bc85ae5",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/fea2578f131db816484bdb05fd5bb7372bc85ae5"
+    },
+    {
+      "path": "app/mobile/ios/mobile/AppDelegate.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2bf31516c1854194a4d4b86ef395609fb35c979",
+      "size": 1240,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b2bf31516c1854194a4d4b86ef395609fb35c979"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5da7684e06f3925414ab131a65860434b9f5fa42",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/5da7684e06f3925414ab131a65860434b9f5fa42"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9fddf019606083ff5a8cf33fab9d9a6643ad0d20",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/9fddf019606083ff5a8cf33fab9d9a6643ad0d20"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca37f6b98f2591d107db1482bbd02fa92b0d9e35",
+      "size": 1206,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ca37f6b98f2591d107db1482bbd02fa92b0d9e35"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-1024pt@1x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a837ca8f6576d0a223f3a92bc3ba248bc92091f",
+      "size": 155383,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6a837ca8f6576d0a223f3a92bc3ba248bc92091f"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-20pt@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ca37d35deed449bbc31cf8a18d6a95ff700834c",
+      "size": 1708,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1ca37d35deed449bbc31cf8a18d6a95ff700834c"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-20pt@3x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdab1eb7d5e1004a07a0ce5eff5417ca301f9dfc",
+      "size": 2691,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/fdab1eb7d5e1004a07a0ce5eff5417ca301f9dfc"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-29pt@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3da5592b9dc1dc8031e18f8e65a82686c5d67bc6",
+      "size": 2600,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3da5592b9dc1dc8031e18f8e65a82686c5d67bc6"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-29pt@3x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b333513124922c27cde2a615dea506fb9f53a97f",
+      "size": 4411,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b333513124922c27cde2a615dea506fb9f53a97f"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-40pt@2x 1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7b3b54d60137a344d62212ceaf160ea957cf243",
+      "size": 3922,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b7b3b54d60137a344d62212ceaf160ea957cf243"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-40pt@3x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34ff51125fb4d0bea4c4cf4b8efa9fdbcf6f751d",
+      "size": 6755,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/34ff51125fb4d0bea4c4cf4b8efa9fdbcf6f751d"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-60pt@2x 1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34ff51125fb4d0bea4c4cf4b8efa9fdbcf6f751d",
+      "size": 6755,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/34ff51125fb4d0bea4c4cf4b8efa9fdbcf6f751d"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Icon-60pt@3x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c409d8c564419dfe0d92f08864476856cb2a2030",
+      "size": 12321,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c409d8c564419dfe0d92f08864476856cb2a2030"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Images.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d92bd53fdb2223e4d23bf1fb6c134fe72931116",
+      "size": 63,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2d92bd53fdb2223e4d23bf1fb6c134fe72931116"
+    },
+    {
+      "path": "app/mobile/ios/mobile/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3123ac602c20119c162c040918d67ac2091056c4",
+      "size": 1638,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3123ac602c20119c162c040918d67ac2091056c4"
+    },
+    {
+      "path": "app/mobile/ios/mobile/LaunchScreen.storyboard",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61d1bfda2eb13db613c2efdae629e47e6b1eaa0a",
+      "size": 4230,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/61d1bfda2eb13db613c2efdae629e47e6b1eaa0a"
+    },
+    {
+      "path": "app/mobile/ios/mobile/PrivacyInfo.xcprivacy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b8317f0652b9dafb97cd3dd3d245d0e74e1bf8",
+      "size": 986,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/41b8317f0652b9dafb97cd3dd3d245d0e74e1bf8"
+    },
+    {
+      "path": "app/mobile/metro.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f98e407b6c1843fbf124d76da51996d1b91fac74",
+      "size": 2042,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f98e407b6c1843fbf124d76da51996d1b91fac74"
+    },
+    {
+      "path": "app/mobile/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c91e6066c9c6c94b26d7d83b66f4a5bc818feb0",
+      "size": 1343,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2c91e6066c9c6c94b26d7d83b66f4a5bc818feb0"
+    },
+    {
+      "path": "app/mobile/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "887d408b541eb68ffd687eb6849cbcce218de1d8",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/887d408b541eb68ffd687eb6849cbcce218de1d8"
+    },
+    {
+      "path": "app/mobile/src/platform.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f41ec5378ded4adafc1f431e4e23082e64a2ce6",
+      "size": 423,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1f41ec5378ded4adafc1f431e4e23082e64a2ce6"
+    },
+    {
+      "path": "app/mobile/tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19bf251f5750757d3ebc8a1af838cf723e362158",
+      "size": 415,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/19bf251f5750757d3ebc8a1af838cf723e362158"
+    },
+    {
+      "path": "app/web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88b01f6c38a93cda1c8b495f5d8cce97d7442351",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/88b01f6c38a93cda1c8b495f5d8cce97d7442351"
+    },
+    {
+      "path": "app/web/app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99d9d949ead65a5448a2d1bfc47a30071989b897",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/99d9d949ead65a5448a2d1bfc47a30071989b897"
+    },
+    {
+      "path": "app/web/app/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62cc676a6b1c05c90f1ca0458b931fdd634e2c63",
+      "size": 3433,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/62cc676a6b1c05c90f1ca0458b931fdd634e2c63"
+    },
+    {
+      "path": "app/web/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09c10eebe1f7660c6b1248687147ed68efb5349e",
+      "size": 17412,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/09c10eebe1f7660c6b1248687147ed68efb5349e"
+    },
+    {
+      "path": "app/web/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17aa477f34b1a2f576641f6580d02bebfbf0f15d",
+      "size": 653,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/17aa477f34b1a2f576641f6580d02bebfbf0f15d"
+    },
+    {
+      "path": "app/web/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ec205523b1c1cc3f04d0e9591b461ef160a5871",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/2ec205523b1c1cc3f04d0e9591b461ef160a5871"
+    },
+    {
+      "path": "app/web/src/App.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1334c27decf00a167141ee48ff411c650f051d7e",
+      "size": 1902,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1334c27decf00a167141ee48ff411c650f051d7e"
+    },
+    {
+      "path": "app/web/src/HydrationGate.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5aa1459d57b4c0f06d45337cdc308c91d782f43",
+      "size": 1500,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e5aa1459d57b4c0f06d45337cdc308c91d782f43"
+    },
+    {
+      "path": "app/web/src/bootstrap.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a292c164beec9a7e948e1ba50e1e88c46441d42",
+      "size": 2483,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/8a292c164beec9a7e948e1ba50e1e88c46441d42"
+    },
+    {
+      "path": "app/web/src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f76d2f53813e3deb9934d7104791227f82027b3",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/4f76d2f53813e3deb9934d7104791227f82027b3"
+    },
+    {
+      "path": "app/web/src/components/AnswerButton.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5559af11eab1c5ae1847af63fa75efb8bd3f0742",
+      "size": 2230,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5559af11eab1c5ae1847af63fa75efb8bd3f0742"
+    },
+    {
+      "path": "app/web/src/components/AnswerList.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e337367cfaac8d61952ae510f834489b90449952",
+      "size": 3662,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e337367cfaac8d61952ae510f834489b90449952"
+    },
+    {
+      "path": "app/web/src/components/Categories.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91d3541756008d879486c39441abd349dd86c034",
+      "size": 7137,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/91d3541756008d879486c39441abd349dd86c034"
+    },
+    {
+      "path": "app/web/src/components/ExamControls.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "223b4bced4b01ada98dc08461b95055d6f8c14e5",
+      "size": 3612,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/223b4bced4b01ada98dc08461b95055d6f8c14e5"
+    },
+    {
+      "path": "app/web/src/components/ExamLauncher.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eabcd45e2d08380b8fc009d7b76d6ddf7ade6ddb",
+      "size": 2141,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/eabcd45e2d08380b8fc009d7b76d6ddf7ade6ddb"
+    },
+    {
+      "path": "app/web/src/components/ExamResultScreen.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c370cd4f9ffa96f0cf5d685e19bc032a1fd3becb",
+      "size": 2691,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c370cd4f9ffa96f0cf5d685e19bc032a1fd3becb"
+    },
+    {
+      "path": "app/web/src/components/FavoritesButton.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a66d5613b33355237c4f952671140eefd87bf2bf",
+      "size": 649,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/a66d5613b33355237c4f952671140eefd87bf2bf"
+    },
+    {
+      "path": "app/web/src/components/Header.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47ae5cb5fe2d9ea2d9c7cf7924c4fc6ad1fcb69a",
+      "size": 3915,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/47ae5cb5fe2d9ea2d9c7cf7924c4fc6ad1fcb69a"
+    },
+    {
+      "path": "app/web/src/components/HomeScreen.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89cb00b67e4a78887c93e3f7570ba83ff4bea159",
+      "size": 10037,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/89cb00b67e4a78887c93e3f7570ba83ff4bea159"
+    },
+    {
+      "path": "app/web/src/components/Icons.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f307dad5ad8db69bcede3a0cd7fa939851254142",
+      "size": 764,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f307dad5ad8db69bcede3a0cd7fa939851254142"
+    },
+    {
+      "path": "app/web/src/components/LandSelect.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40ac7c2c799b2636e26ae2df199b5f7d65ac01c4",
+      "size": 848,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/40ac7c2c799b2636e26ae2df199b5f7d65ac01c4"
+    },
+    {
+      "path": "app/web/src/components/NavigationControls.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ff148c8b072f43d3c342016b811ea4c1a291df3",
+      "size": 2923,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/8ff148c8b072f43d3c342016b811ea4c1a291df3"
+    },
+    {
+      "path": "app/web/src/components/QuestionCard.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aafe79ba0281755fb9255d7fef1d1aa83648152a",
+      "size": 2291,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/aafe79ba0281755fb9255d7fef1d1aa83648152a"
+    },
+    {
+      "path": "app/web/src/components/QuestionCardView.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fddeaa9fac29156d96939d6be4f06df38403808",
+      "size": 2185,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1fddeaa9fac29156d96939d6be4f06df38403808"
+    },
+    {
+      "path": "app/web/src/components/QuestionListView.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "163a58b76f315792a9267fac89a6820fde33a07d",
+      "size": 2623,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/163a58b76f315792a9267fac89a6820fde33a07d"
+    },
+    {
+      "path": "app/web/src/components/QuestionPicker.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e927378079b1bf4e880f62509a38ad7ea08a7e21",
+      "size": 4580,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e927378079b1bf4e880f62509a38ad7ea08a7e21"
+    },
+    {
+      "path": "app/web/src/components/QuestionView.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecb19ba1f18878ee9f9ffaf23db33469198b3f86",
+      "size": 2122,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ecb19ba1f18878ee9f9ffaf23db33469198b3f86"
+    },
+    {
+      "path": "app/web/src/components/SettingsScreen.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d849619a01164cf0d71ceb8b244a666f2b265d59",
+      "size": 3296,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d849619a01164cf0d71ceb8b244a666f2b265d59"
+    },
+    {
+      "path": "app/web/src/components/Star.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a3a93906d3e14d91208936aa285184b8e66ee39",
+      "size": 519,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/8a3a93906d3e14d91208936aa285184b8e66ee39"
+    },
+    {
+      "path": "app/web/src/components/StarButton.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0afdf5f1510849999fbb036deec66ec9369a86c",
+      "size": 814,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d0afdf5f1510849999fbb036deec66ec9369a86c"
+    },
+    {
+      "path": "app/web/src/components/Statistics.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02dd4a74504f02daef0ad6ff2247c663e8c62346",
+      "size": 792,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/02dd4a74504f02daef0ad6ff2247c663e8c62346"
+    },
+    {
+      "path": "app/web/src/components/UiIcon.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba03a22720c47df8ad97e6a1f31ea5283b953b4a",
+      "size": 1444,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ba03a22720c47df8ad97e6a1f31ea5283b953b4a"
+    },
+    {
+      "path": "app/web/src/exam-time.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd7a12f138e308d9d03895ca00fb489d3638ac02",
+      "size": 389,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/cd7a12f138e308d9d03895ca00fb489d3638ac02"
+    },
+    {
+      "path": "app/web/src/hooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28109f2375a78414401dce7b44ec71db401c8f81",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/28109f2375a78414401dce7b44ec71db401c8f81"
+    },
+    {
+      "path": "app/web/src/hooks/useIsMobile.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c158805f7c73bc936db5841dbfcbfeed7e09976",
+      "size": 518,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/9c158805f7c73bc936db5841dbfcbfeed7e09976"
+    },
+    {
+      "path": "app/web/src/main.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03481178b00a67a733752f3bd9662bb40743f8ba",
+      "size": 687,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/03481178b00a67a733752f3bd9662bb40743f8ba"
+    },
+    {
+      "path": "app/web/src/persistence.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e9d5a5fec15e75a17534194604be4bf69e7e755",
+      "size": 405,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3e9d5a5fec15e75a17534194604be4bf69e7e755"
+    },
+    {
+      "path": "app/web/src/platform.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90d09b1fd9db2beffe171bd48b1f0186b7e8962a",
+      "size": 4749,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/90d09b1fd9db2beffe171bd48b1f0186b7e8962a"
+    },
+    {
+      "path": "app/web/src/styles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1bd6b5a54172c7755fab3b68577e16057d4d4da",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/a1bd6b5a54172c7755fab3b68577e16057d4d4da"
+    },
+    {
+      "path": "app/web/src/styles/AnswerButton.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc27bf64ae1d557c018cc75ab05b8f6c8a055940",
+      "size": 2864,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/fc27bf64ae1d557c018cc75ab05b8f6c8a055940"
+    },
+    {
+      "path": "app/web/src/styles/App.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ed8786172deb375495ad82f6a3e3e379a76a5b3",
+      "size": 22151,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7ed8786172deb375495ad82f6a3e3e379a76a5b3"
+    },
+    {
+      "path": "app/web/src/styles/ExamControls.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b9088f0d7d443a1a68192e267e5db49a573c5f4",
+      "size": 2517,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0b9088f0d7d443a1a68192e267e5db49a573c5f4"
+    },
+    {
+      "path": "app/web/src/styles/ExamResult.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e96b17212485415b8c22a8dc7c1a4acd32ad8972",
+      "size": 3239,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e96b17212485415b8c22a8dc7c1a4acd32ad8972"
+    },
+    {
+      "path": "app/web/src/styles/Header.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7e1039faecfda60c5fe2fa3a4b02caf4b1ad6e5",
+      "size": 5186,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d7e1039faecfda60c5fe2fa3a4b02caf4b1ad6e5"
+    },
+    {
+      "path": "app/web/src/styles/NavigationControls.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4beb2a510243d62630a888213773471826e9bd5c",
+      "size": 1776,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4beb2a510243d62630a888213773471826e9bd5c"
+    },
+    {
+      "path": "app/web/src/styles/QuestionCard.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bee152a0f218f2e53519d212a4e9b3ec0db7807f",
+      "size": 1770,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/bee152a0f218f2e53519d212a4e9b3ec0db7807f"
+    },
+    {
+      "path": "app/web/src/styles/QuestionList.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fed4faa0c12b8eda5e59c3cf1ef3d92f5b5486ba",
+      "size": 1775,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/fed4faa0c12b8eda5e59c3cf1ef3d92f5b5486ba"
+    },
+    {
+      "path": "app/web/src/styles/QuestionPicker.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e98a653a7e1fb46e87893bf0056220d79419583",
+      "size": 4026,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7e98a653a7e1fb46e87893bf0056220d79419583"
+    },
+    {
+      "path": "app/web/src/styles/StarButton.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "331fe21e5c23eab5a0c90d5050afc219f3f65d8a",
+      "size": 574,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/331fe21e5c23eab5a0c90d5050afc219f3f65d8a"
+    },
+    {
+      "path": "app/web/src/styles/Statistics.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "814ac4899ef7c8a2f740a143da4d173c81bf2e7d",
+      "size": 3310,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/814ac4899ef7c8a2f740a143da4d173c81bf2e7d"
+    },
+    {
+      "path": "app/web/src/styles/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11ea39383eed13113dfebbe31db22195a2c04141",
+      "size": 3585,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/11ea39383eed13113dfebbe31db22195a2c04141"
+    },
+    {
+      "path": "app/web/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d15be188f3951eb42798ce44e110e56f2ce81379",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/d15be188f3951eb42798ce44e110e56f2ce81379"
+    },
+    {
+      "path": "app/web/test/redesign.test.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc630539c61be0fb1695e7b21c43c1f1c598fe52",
+      "size": 5917,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/dc630539c61be0fb1695e7b21c43c1f1c598fe52"
+    },
+    {
+      "path": "app/web/test/uklad.test.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d07a164851764c2c2afb9de3efd61f7f1bcd38a",
+      "size": 11461,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7d07a164851764c2c2afb9de3efd61f7f1bcd38a"
+    },
+    {
+      "path": "app/web/vite.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0685a494c1c8d50323907ec154eee756a6815a9",
+      "size": 1244,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f0685a494c1c8d50323907ec154eee756a6815a9"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca54add0eaa7fcf49c451064aaa0e44a9cf7b070",
+      "size": 2092,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ca54add0eaa7fcf49c451064aaa0e44a9cf7b070"
+    },
+    {
+      "path": "packages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "828ab90db39257a65217a6f7bf449f40072658cb",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/828ab90db39257a65217a6f7bf449f40072658cb"
+    },
+    {
+      "path": "packages/mobile-app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "148d70ffd096f40983873db2e39a54001feace3a",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/148d70ffd096f40983873db2e39a54001feace3a"
+    },
+    {
+      "path": "packages/mobile-app/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d1c91355b586b74d6c603f03aa302e507b22be6",
+      "size": 751,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5d1c91355b586b74d6c603f03aa302e507b22be6"
+    },
+    {
+      "path": "packages/mobile-app/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6941bc75a0ae79989ec1238f70c07505d92f3732",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/6941bc75a0ae79989ec1238f70c07505d92f3732"
+    },
+    {
+      "path": "packages/mobile-app/src/App.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2521d1cb63cf44472cf17ac62e74948678cca758",
+      "size": 7159,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2521d1cb63cf44472cf17ac62e74948678cca758"
+    },
+    {
+      "path": "packages/mobile-app/src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "827d3db2a342d99f0d371fa435f127e4a769a6a3",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/827d3db2a342d99f0d371fa435f127e4a769a6a3"
+    },
+    {
+      "path": "packages/mobile-app/src/assets/images.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1de89f13338955b9fd4ca9c2393651a0093aa27d",
+      "size": 2606,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1de89f13338955b9fd4ca9c2393651a0093aa27d"
+    },
+    {
+      "path": "packages/mobile-app/src/bootstrap.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1439c63c46903fb8dedd4fc396c60398e32f0608",
+      "size": 5306,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/1439c63c46903fb8dedd4fc396c60398e32f0608"
+    },
+    {
+      "path": "packages/mobile-app/src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ed82849e861d4e3e3c864f7f833c0552ef73eac",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/6ed82849e861d4e3e3c864f7f833c0552ef73eac"
+    },
+    {
+      "path": "packages/mobile-app/src/components/AnswerButton.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6a073026df1563ee52961205f0c3e5f29d5d84f",
+      "size": 5430,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c6a073026df1563ee52961205f0c3e5f29d5d84f"
+    },
+    {
+      "path": "packages/mobile-app/src/components/AnswerList.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c11afaa85cbd108b8e4eba19c5ed91b507c7b58a",
+      "size": 5229,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c11afaa85cbd108b8e4eba19c5ed91b507c7b58a"
+    },
+    {
+      "path": "packages/mobile-app/src/components/AppBackground.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86625638c80dea6b14dc164e8db8319f100af1b4",
+      "size": 5953,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/86625638c80dea6b14dc164e8db8319f100af1b4"
+    },
+    {
+      "path": "packages/mobile-app/src/components/BookmarkButton.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f5183387df0ca3349e2ee965f8656dc94d3b60a",
+      "size": 1539,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2f5183387df0ca3349e2ee965f8656dc94d3b60a"
+    },
+    {
+      "path": "packages/mobile-app/src/components/Categories.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21242a52d71588fad9b1957895ddcb4f4fcc5495",
+      "size": 9312,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/21242a52d71588fad9b1957895ddcb4f4fcc5495"
+    },
+    {
+      "path": "packages/mobile-app/src/components/ExamResultScreen.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b75b4044aeedcdef61b9bff6a259ff4685d14503",
+      "size": 7865,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b75b4044aeedcdef61b9bff6a259ff4685d14503"
+    },
+    {
+      "path": "packages/mobile-app/src/components/ExamSessionControls.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f67e9bd69fba6d272c39ed36692e964c406889b",
+      "size": 7340,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0f67e9bd69fba6d272c39ed36692e964c406889b"
+    },
+    {
+      "path": "packages/mobile-app/src/components/FavoritesButton.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "906f32a4c619d0c3b967415ca7a9a50ad1be426f",
+      "size": 1483,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/906f32a4c619d0c3b967415ca7a9a50ad1be426f"
+    },
+    {
+      "path": "packages/mobile-app/src/components/GermanyMap.paths.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16972bc2d499263f051739310f4763711b278ec2",
+      "size": 107498,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/16972bc2d499263f051739310f4763711b278ec2"
+    },
+    {
+      "path": "packages/mobile-app/src/components/Header.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51068f98897f5249fa61bf333d3e59172e27f8fb",
+      "size": 2955,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/51068f98897f5249fa61bf333d3e59172e27f8fb"
+    },
+    {
+      "path": "packages/mobile-app/src/components/HomeScreen.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb52f495f597345fde062a5dc4b5a78fb43566a6",
+      "size": 37552,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/bb52f495f597345fde062a5dc4b5a78fb43566a6"
+    },
+    {
+      "path": "packages/mobile-app/src/components/Icons.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d395ab27467b371ac8b0682ca449b7530383a689",
+      "size": 10882,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d395ab27467b371ac8b0682ca449b7530383a689"
+    },
+    {
+      "path": "packages/mobile-app/src/components/LandSelection.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20751bebc909d1a181b20f2af6f81f595cba8ec6",
+      "size": 14719,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/20751bebc909d1a181b20f2af6f81f595cba8ec6"
+    },
+    {
+      "path": "packages/mobile-app/src/components/NavigationControls.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0bd1f7e29be8af44d771f0a607e12c03c91134a",
+      "size": 5818,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f0bd1f7e29be8af44d771f0a607e12c03c91134a"
+    },
+    {
+      "path": "packages/mobile-app/src/components/OnboardingScreen.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3890c9a38274da29145035e0211fc9caa858cd2",
+      "size": 3701,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d3890c9a38274da29145035e0211fc9caa858cd2"
+    },
+    {
+      "path": "packages/mobile-app/src/components/QuestionCard.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7baf9100ca25062b05416768dee18d25a0671890",
+      "size": 7454,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7baf9100ca25062b05416768dee18d25a0671890"
+    },
+    {
+      "path": "packages/mobile-app/src/components/QuestionCardView.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2ea17ba3171092c8517766974583e7673816dcc",
+      "size": 2106,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b2ea17ba3171092c8517766974583e7673816dcc"
+    },
+    {
+      "path": "packages/mobile-app/src/components/QuestionListView.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac7239b583ca6f92c86c0784a3b0541a3b302768",
+      "size": 4225,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ac7239b583ca6f92c86c0784a3b0541a3b302768"
+    },
+    {
+      "path": "packages/mobile-app/src/components/QuestionPicker.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af7bb138f260535620e699cafbf02e9b76a0f5a6",
+      "size": 20530,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/af7bb138f260535620e699cafbf02e9b76a0f5a6"
+    },
+    {
+      "path": "packages/mobile-app/src/components/QuestionView.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41f36141929b7d89347eb199a7ade992a3109629",
+      "size": 883,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/41f36141929b7d89347eb199a7ade992a3109629"
+    },
+    {
+      "path": "packages/mobile-app/src/components/SettingsScreen.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7995d33c5360d8281705c67154fa554be38944e9",
+      "size": 19876,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7995d33c5360d8281705c67154fa554be38944e9"
+    },
+    {
+      "path": "packages/mobile-app/src/components/Star.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b394009d87c1066990c3f8bc03df77c28385fe55",
+      "size": 305,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b394009d87c1066990c3f8bc03df77c28385fe55"
+    },
+    {
+      "path": "packages/mobile-app/src/components/Statistics.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18b88eaa0eab0b9c68b9b88781c7124511788590",
+      "size": 5881,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/18b88eaa0eab0b9c68b9b88781c7124511788590"
+    },
+    {
+      "path": "packages/mobile-app/src/components/ThemeButton.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06b773a2c8ab61d6baf6e2b82690b03c0707de1c",
+      "size": 2088,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/06b773a2c8ab61d6baf6e2b82690b03c0707de1c"
+    },
+    {
+      "path": "packages/mobile-app/src/exam-time.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "353c3d088ffb7bfad21cdfc1525559f08636b22e",
+      "size": 430,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/353c3d088ffb7bfad21cdfc1525559f08636b22e"
+    },
+    {
+      "path": "packages/mobile-app/src/hardware-back.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6970e3fcd4eada91a5e2b52e3073bb1337baf10f",
+      "size": 739,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/6970e3fcd4eada91a5e2b52e3073bb1337baf10f"
+    },
+    {
+      "path": "packages/mobile-app/src/hooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "92ca81b00fa42981516649b626547a632799316e",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/92ca81b00fa42981516649b626547a632799316e"
+    },
+    {
+      "path": "packages/mobile-app/src/hooks/useIsTablet.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "836a989841cdc80e4283f629581885809152fbc7",
+      "size": 662,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/836a989841cdc80e4283f629581885809152fbc7"
+    },
+    {
+      "path": "packages/mobile-app/src/i18n.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c32414676d6dd58cb815fef3ccd2950e17bd8d71",
+      "size": 37,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c32414676d6dd58cb815fef3ccd2950e17bd8d71"
+    },
+    {
+      "path": "packages/mobile-app/src/layout.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c125e5344fab7122cab79e793876a6688173703f",
+      "size": 603,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c125e5344fab7122cab79e793876a6688173703f"
+    },
+    {
+      "path": "packages/mobile-app/src/persistence-lifecycle.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "077fb826f71bd66e6f4e53f3cf2477f50af4e83c",
+      "size": 2508,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/077fb826f71bd66e6f4e53f3cf2477f50af4e83c"
+    },
+    {
+      "path": "packages/mobile-app/src/persistence.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6fc4dc6809e972febf8a6b413173783c2736ea5",
+      "size": 639,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e6fc4dc6809e972febf8a6b413173783c2736ea5"
+    },
+    {
+      "path": "packages/mobile-app/src/platform.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29cb8d6e23927a327b9da7e0ce8b636e1f342232",
+      "size": 5230,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/29cb8d6e23927a327b9da7e0ce8b636e1f342232"
+    },
+    {
+      "path": "packages/mobile-app/src/refs.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9874a6ef79d8e949fbd762570d491c1963816875",
+      "size": 136,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/9874a6ef79d8e949fbd762570d491c1963816875"
+    },
+    {
+      "path": "packages/mobile-app/src/theme.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21d1aae092510ec7e7ab17c4935f3bddb0c1053f",
+      "size": 2633,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/21d1aae092510ec7e7ab17c4935f3bddb0c1053f"
+    },
+    {
+      "path": "packages/mobile-app/src/types",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9b1094290fdf78310600b81c20ecdecb468acbc2",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/9b1094290fdf78310600b81c20ecdecb468acbc2"
+    },
+    {
+      "path": "packages/mobile-app/src/types/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1fddf8a5941fde64a29f38c6587385c3d94f5e0",
+      "size": 221,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e1fddf8a5941fde64a29f38c6587385c3d94f5e0"
+    },
+    {
+      "path": "packages/mobile-app/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c9c6c25d98b2469bf4b1e7a0c4a291600d60ded",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/5c9c6c25d98b2469bf4b1e7a0c4a291600d60ded"
+    },
+    {
+      "path": "packages/mobile-app/test/germany-map.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28765680e4e938a9f1ffc7075a2a209f0031942a",
+      "size": 548,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/28765680e4e938a9f1ffc7075a2a209f0031942a"
+    },
+    {
+      "path": "packages/mobile-app/test/hardware-back.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd79218be82bb5c73a7f7fea0cb88aa6789b47cb",
+      "size": 4121,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/dd79218be82bb5c73a7f7fea0cb88aa6789b47cb"
+    },
+    {
+      "path": "packages/mobile-app/test/i18n.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2598e458dbba53587671c6cf55ef5522725ecc5",
+      "size": 759,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b2598e458dbba53587671c6cf55ef5522725ecc5"
+    },
+    {
+      "path": "packages/mobile-app/test/layout.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "090a3791e36b6aa372a4ab205eead330a1381de0",
+      "size": 1396,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/090a3791e36b6aa372a4ab205eead330a1381de0"
+    },
+    {
+      "path": "packages/mobile-app/test/mocks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f10ef872670d2de2989b4c6b1a0f1f2d2c5e522d",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/f10ef872670d2de2989b4c6b1a0f1f2d2c5e522d"
+    },
+    {
+      "path": "packages/mobile-app/test/mocks/react-native.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec4c062fba9f5071d4b601cf5dd3bdb1c1a16a05",
+      "size": 992,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ec4c062fba9f5071d4b601cf5dd3bdb1c1a16a05"
+    },
+    {
+      "path": "packages/mobile-app/test/uklad.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b49033d9a8b32d696fc3424a959f9d85e9582f1",
+      "size": 23217,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4b49033d9a8b32d696fc3424a959f9d85e9582f1"
+    },
+    {
+      "path": "packages/mobile-app/tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a501b0eab08541d23235d6f228a802a15696d7ec",
+      "size": 377,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/a501b0eab08541d23235d6f228a802a15696d7ec"
+    },
+    {
+      "path": "packages/mobile-app/vitest.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8323c5a07e426cf6998fe25f3fd6dca5354d41f6",
+      "size": 386,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/8323c5a07e426cf6998fe25f3fd6dca5354d41f6"
+    },
+    {
+      "path": "packages/shared",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "32575118644880222e0538430dbd13455b475495",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/32575118644880222e0538430dbd13455b475495"
+    },
+    {
+      "path": "packages/shared/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e9cb70767d0d8e635b413d1fc182bdb00b919ff",
+      "size": 867,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5e9cb70767d0d8e635b413d1fc182bdb00b919ff"
+    },
+    {
+      "path": "packages/shared/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "56e192406f870a6d82ed1b66411a4ce1a9c035b8",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/56e192406f870a6d82ed1b66411a4ce1a9c035b8"
+    },
+    {
+      "path": "packages/shared/src/app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff6abe3352139946a1f5510305810352f627e3f5",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/ff6abe3352139946a1f5510305810352f627e3f5"
+    },
+    {
+      "path": "packages/shared/src/app/uklad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4300fc2796250df3b8749b1f148b7344254186eb",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/4300fc2796250df3b8749b1f148b7344254186eb"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/bindings.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f557ec603da2153d99827165ea40f32c4342703",
+      "size": 602,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2f557ec603da2153d99827165ea40f32c4342703"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/catalog.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58e5212a60479b6cfe3a97f1a105be7fdea5ee67",
+      "size": 6123,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/58e5212a60479b6cfe3a97f1a105be7fdea5ee67"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/contracts.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ca2132dae6613865ef5853ce5f96b06e278552e",
+      "size": 11732,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4ca2132dae6613865ef5853ce5f96b06e278552e"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ce7439cbddd0cabe353bc5df75abeb6da54cdd",
+      "size": 1789,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d4ce7439cbddd0cabe353bc5df75abeb6da54cdd"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/initial-state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f67de5c0c580c7366cd1223caa14f99740bde939",
+      "size": 1094,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/f67de5c0c580c7366cd1223caa14f99740bde939"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/legacy-persistence.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d82f86dde558fe7caeb75e96be273b1677632e70",
+      "size": 5628,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d82f86dde558fe7caeb75e96be273b1677632e70"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/modules.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f50dcf8c53b737ac4b150eec7af1ea2c8f8185a",
+      "size": 1441,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/8f50dcf8c53b737ac4b150eec7af1ea2c8f8185a"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/persistence-config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3269630552813b0b61e6ac64a0f47b051df9ad7b",
+      "size": 342,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3269630552813b0b61e6ac64a0f47b051df9ad7b"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/persistence.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "676641f137db9c400e7a372001ec3120fbec8959",
+      "size": 9638,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/676641f137db9c400e7a372001ec3120fbec8959"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/register.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "479643f71b6d2f15b85fad1c4356b42976723cac",
+      "size": 603,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/479643f71b6d2f15b85fad1c4356b42976723cac"
+    },
+    {
+      "path": "packages/shared/src/app/uklad/runtime.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cf2e54e969205e7c654d147448a75cfe0888512",
+      "size": 1032,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7cf2e54e969205e7c654d147448a75cfe0888512"
+    },
+    {
+      "path": "packages/shared/src/features",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d6a891adcc5bef1e124b18ab36a23362ad4259b",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/2d6a891adcc5bef1e124b18ab36a23362ad4259b"
+    },
+    {
+      "path": "packages/shared/src/features/navigation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1abd482e93e4ca8890b5bfc2dd7d93cc29308566",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/1abd482e93e4ca8890b5bfc2dd7d93cc29308566"
+    },
+    {
+      "path": "packages/shared/src/features/navigation/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35e5a73929a70249134fb8c22f91cb3330b7bb63",
+      "size": 7704,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/35e5a73929a70249134fb8c22f91cb3330b7bb63"
+    },
+    {
+      "path": "packages/shared/src/features/navigation/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3089a3e60ae061fdebd111a02aaf38b87cccc00b",
+      "size": 345,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3089a3e60ae061fdebd111a02aaf38b87cccc00b"
+    },
+    {
+      "path": "packages/shared/src/features/navigation/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3551c02cc4f837f355dd1bd0bfd179f91bd5880",
+      "size": 512,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b3551c02cc4f837f355dd1bd0bfd179f91bd5880"
+    },
+    {
+      "path": "packages/shared/src/features/navigation/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2213810f8033a2c7430b703e435daad4276149f1",
+      "size": 4695,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2213810f8033a2c7430b703e435daad4276149f1"
+    },
+    {
+      "path": "packages/shared/src/features/practice",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dcfd0b3538191809544df1a8529eaec30d479fc8",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/dcfd0b3538191809544df1a8529eaec30d479fc8"
+    },
+    {
+      "path": "packages/shared/src/features/practice/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05ffbf5d1463a91f1f641ce2be9ca69ee9fbf32f",
+      "size": 3351,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/05ffbf5d1463a91f1f641ce2be9ca69ee9fbf32f"
+    },
+    {
+      "path": "packages/shared/src/features/practice/migration.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "523a3cb63c4ac791f87ef49923d8bde82d06d163",
+      "size": 1248,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/523a3cb63c4ac791f87ef49923d8bde82d06d163"
+    },
+    {
+      "path": "packages/shared/src/features/practice/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3442482980dedd68079021179cd2ee12c6ee68c0",
+      "size": 335,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3442482980dedd68079021179cd2ee12c6ee68c0"
+    },
+    {
+      "path": "packages/shared/src/features/practice/selection.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d055e5f4ac188dba43a7c04a60cc5d804b03152a",
+      "size": 2509,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d055e5f4ac188dba43a7c04a60cc5d804b03152a"
+    },
+    {
+      "path": "packages/shared/src/features/practice/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a02a6a608129507cb9311b78bf36257813a19b4",
+      "size": 516,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/2a02a6a608129507cb9311b78bf36257813a19b4"
+    },
+    {
+      "path": "packages/shared/src/features/practice/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "005c3510d683f8a9405712c3187afc3aeb2be7a3",
+      "size": 7380,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/005c3510d683f8a9405712c3187afc3aeb2be7a3"
+    },
+    {
+      "path": "packages/shared/src/features/preferences",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8e811d5a479abce45f386ff98e5c9d3d37e69a74",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/8e811d5a479abce45f386ff98e5c9d3d37e69a74"
+    },
+    {
+      "path": "packages/shared/src/features/preferences/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ebff1fb50e91f07051baaa11d5a0e5d764f8d55",
+      "size": 1830,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/3ebff1fb50e91f07051baaa11d5a0e5d764f8d55"
+    },
+    {
+      "path": "packages/shared/src/features/preferences/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26093309de40a6456ef3a35298a6f329957d64ab",
+      "size": 350,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/26093309de40a6456ef3a35298a6f329957d64ab"
+    },
+    {
+      "path": "packages/shared/src/features/preferences/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae3ff54182bd36fb00d02136a1d2f67ec4055df4",
+      "size": 486,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ae3ff54182bd36fb00d02136a1d2f67ec4055df4"
+    },
+    {
+      "path": "packages/shared/src/features/preferences/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68b092a31327064f06dfccde123d9d947b89d8ee",
+      "size": 944,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/68b092a31327064f06dfccde123d9d947b89d8ee"
+    },
+    {
+      "path": "packages/shared/src/features/questions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16ab50aaebf69bb6c721fd137b83739982cc6959",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/16ab50aaebf69bb6c721fd137b83739982cc6959"
+    },
+    {
+      "path": "packages/shared/src/features/questions/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c4bf204683f258a5d555682e840d85da330f3eb",
+      "size": 1503,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/0c4bf204683f258a5d555682e840d85da330f3eb"
+    },
+    {
+      "path": "packages/shared/src/features/questions/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4f8a094a2bda960ee28ccbb6c49fd8ace3219b0",
+      "size": 340,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b4f8a094a2bda960ee28ccbb6c49fd8ace3219b0"
+    },
+    {
+      "path": "packages/shared/src/features/questions/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7af5cd8a2920521659ad89c8f9a495a48ec584be",
+      "size": 2773,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/7af5cd8a2920521659ad89c8f9a495a48ec584be"
+    },
+    {
+      "path": "packages/shared/src/features/questions/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80ceaf7c2e0ea45611e8c0543d7c90fd1e7dc11a",
+      "size": 720,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/80ceaf7c2e0ea45611e8c0543d7c90fd1e7dc11a"
+    },
+    {
+      "path": "packages/shared/src/features/test-session",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a89189df431da547fcccb42316a284e0e7fa57aa",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/a89189df431da547fcccb42316a284e0e7fa57aa"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0fa53713cc56002a50a639897a610280b50ee4d",
+      "size": 2490,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e0fa53713cc56002a50a639897a610280b50ee4d"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/generate.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "225d7005735ccf6bec2041f0eb37e811c666cb61",
+      "size": 4962,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/225d7005735ccf6bec2041f0eb37e811c666cb61"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1855d6f58dfa1b78c91d3e4ba8b7cd920afec3c",
+      "size": 684,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c1855d6f58dfa1b78c91d3e4ba8b7cd920afec3c"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/rules.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "352f79d0a4a0776c96a9381f474d0df9da356d0b",
+      "size": 559,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/352f79d0a4a0776c96a9381f474d0df9da356d0b"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19154bfecc0223049bbbe866cce1ce3adfb8e7fc",
+      "size": 563,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/19154bfecc0223049bbbe866cce1ce3adfb8e7fc"
+    },
+    {
+      "path": "packages/shared/src/features/test-session/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0117479ece7333f6035546222be90241a719e6b",
+      "size": 1643,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/e0117479ece7333f6035546222be90241a719e6b"
+    },
+    {
+      "path": "packages/shared/src/features/ui",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf858e317b3129ee56894f600ee37d6b891df0c2",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/bf858e317b3129ee56894f600ee37d6b891df0c2"
+    },
+    {
+      "path": "packages/shared/src/features/ui/events.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37e1d91c739eecad4bdfa1546fa17d81ab1bcc71",
+      "size": 667,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/37e1d91c739eecad4bdfa1546fa17d81ab1bcc71"
+    },
+    {
+      "path": "packages/shared/src/features/ui/module.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38b1b8b812cad745910ed56d81fe8ee10482a8f1",
+      "size": 305,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/38b1b8b812cad745910ed56d81fe8ee10482a8f1"
+    },
+    {
+      "path": "packages/shared/src/features/ui/state.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77041690546964b2a1b2b8becdd27f9286423427",
+      "size": 156,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/77041690546964b2a1b2b8becdd27f9286423427"
+    },
+    {
+      "path": "packages/shared/src/features/ui/subscriptions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddca3c8e0f1f93b990f417dac3aab0bd9621501f",
+      "size": 295,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/ddca3c8e0f1f93b990f417dac3aab0bd9621501f"
+    },
+    {
+      "path": "packages/shared/src/i18n.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8d28fff11f147d6dd078049cc8efd41e314ebdb",
+      "size": 29874,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d8d28fff11f147d6dd078049cc8efd41e314ebdb"
+    },
+    {
+      "path": "packages/shared/src/uklad.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dde926fc7d18f4f61cbb7636aff361757eee1339",
+      "size": 190,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/dde926fc7d18f4f61cbb7636aff361757eee1339"
+    },
+    {
+      "path": "packages/shared/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2bfb3ae2062490d5ec2d4ce2f7d3dab007575333",
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/trees/2bfb3ae2062490d5ec2d4ce2f7d3dab007575333"
+    },
+    {
+      "path": "packages/shared/test/generateTest.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af6d1e8308823daf7d176cbb1c31c1755655f884",
+      "size": 24536,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/af6d1e8308823daf7d176cbb1c31c1755655f884"
+    },
+    {
+      "path": "packages/shared/test/setup.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a386099a0d94d725c36c4426f00f2df0c86dbc2e",
+      "size": 284,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/a386099a0d94d725c36c4426f00f2df0c86dbc2e"
+    },
+    {
+      "path": "packages/shared/test/uklad-domain.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d888cf0fab4649cbdfbe23578c99b12eccd9000b",
+      "size": 16031,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/d888cf0fab4649cbdfbe23578c99b12eccd9000b"
+    },
+    {
+      "path": "packages/shared/test/uklad-foundation.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c799e210e2ccdfd794b8e1fc414f5c579b58066f",
+      "size": 3875,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/c799e210e2ccdfd794b8e1fc414f5c579b58066f"
+    },
+    {
+      "path": "packages/shared/test/uklad-parity.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bda38d5f4fcdaab115413a239ca6926749d1b78b",
+      "size": 12612,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/bda38d5f4fcdaab115413a239ca6926749d1b78b"
+    },
+    {
+      "path": "packages/shared/test/uklad-persistence.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfac301221e47671cf53fffa50dd6a9cdb29855c",
+      "size": 28954,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/cfac301221e47671cf53fffa50dd6a9cdb29855c"
+    },
+    {
+      "path": "packages/shared/tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d8736b5061ad2d879eee55dcc04a7fb124e2c60",
+      "size": 409,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/4d8736b5061ad2d879eee55dcc04a7fb124e2c60"
+    },
+    {
+      "path": "packages/shared/vitest.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "506df26977f38b245b3b2e8625efd7924a9951fb",
+      "size": 209,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/506df26977f38b245b3b2e8625efd7924a9951fb"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12588c9469f4b7ef083d8eb5ce35e5c4bbcaf7ba",
+      "size": 402219,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/12588c9469f4b7ef083d8eb5ce35e5c4bbcaf7ba"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bd19dd16b38b36237610a5f3c622c02f3fd8a8c",
+      "size": 248,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/5bd19dd16b38b36237610a5f3c622c02f3fd8a8c"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b06fd9bee4f6b3ed32e4299a1324b8c8b8653a76",
+      "size": 419,
+      "url": "https://api.github.com/repos/flexsurfer/einburgerungstest/git/blobs/b06fd9bee4f6b3ed32e4299a1324b8c8b8653a76"
+    }
+  ],
+  "truncated": false
+}
