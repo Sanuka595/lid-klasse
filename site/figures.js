@@ -25,7 +25,7 @@
     return `<div class="fig-cell"><div class="fig-draw">${svg}</div><span>${n}</span></div>`;
   }
 
-  // Coat of arms symbols
+  // Base coat of arms & heraldic elements
   const eagle = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M6 6h52v40c0 16-12 26-26 28C18 72 6 62 6 46z" fill="#e4c33a" stroke="#1c1915" stroke-width="1.4"/><path d="M30 34c-16-4-20 8-16 18 8-4 12-6 16-12z" fill="#1c1915"/><path d="M34 32c14-8 20 2 16 16-8-2-12-4-16-10z" fill="#1c1915"/><ellipse cx="32" cy="42" rx="6" ry="12" fill="#1c1915"/><circle cx="40" cy="22" r="5" fill="#1c1915"/><path d="M44 21h8l-3 3z" fill="#b4532a"/><path d="M26 52l-6 8M34 54l6 8" stroke="#1c1915" stroke-width="2"/></svg>`;
   const chi = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M32 8c10 8 14 14 14 24 0 8-4 16-14 28-10-12-14-20-14-28 0-10 4-16 14-24z" fill="none" stroke="#1c1915" stroke-width="3.2"/><path d="M18 30h28M32 14v36" stroke="#1c1915" stroke-width="3.2"/><path d="M32 18c8 0 12 6 12 12" fill="none" stroke="#1c1915" stroke-width="3.2"/></svg>`;
   const cross = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M24 8h16l2 14h14v16l-14 2v14H26l-2-14H10V24h14z" fill="#b9c0c6" stroke="#31506a" stroke-width="1.6"/></svg>`;
@@ -35,6 +35,20 @@
   const key = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#b4332a" stroke="#1c1915"/><circle cx="26" cy="30" r="8" fill="none" stroke="#f4f0e6" stroke-width="3"/><path d="M33 30h16v4h-4v6h-4v-6h-4" fill="none" stroke="#f4f0e6" stroke-width="3"/></svg>`;
   const lion = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#2c4c7a" stroke="#1c1915"/><path d="M10 16h44v8H10zM10 32h44v8H10z" fill="#f4f0e6"/><path d="M10 24h44v8H10zM10 40h44v8H10z" fill="#b4332a"/><path d="M30 20c6 2 10 10 8 20-6 2-12 0-14-6 2-6 2-12 6-14z" fill="#e4c33a"/></svg>`;
   const bear = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M16 4h10l2 5h8l2-5h10v8l6 4v6H10v-6l6-4z" fill="#e4c33a" stroke="#1c1915"/><path d="M8 16h48v40c0 10-10 16-24 18C18 72 8 66 8 56z" fill="#f7f4ee" stroke="#1c1915"/><circle cx="24" cy="34" r="5" fill="#1c1915"/><circle cx="40" cy="34" r="5" fill="#1c1915"/><ellipse cx="32" cy="44" rx="8" ry="9" fill="#1c1915"/><circle cx="29" cy="43" r="1" fill="#f7f4ee"/><circle cx="35" cy="43" r="1" fill="#f7f4ee"/><ellipse cx="32" cy="48" rx="2" ry="1.3" fill="#f7f4ee"/></svg>`;
+
+  // Extended state shields
+  const bwShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#e4c33a" stroke="#1c1915"/><path d="M22 20h20v6h-20zM22 34h20v6h-20zM22 48h20v6h-20z" fill="#1c1915"/><circle cx="38" cy="23" r="2.5" fill="#b4332a"/><circle cx="38" cy="37" r="2.5" fill="#b4332a"/><circle cx="38" cy="51" r="2.5" fill="#b4332a"/></svg>`;
+  const byShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#2c4c9a" stroke="#1c1915"/><polygon points="8,8 24,8 8,24" fill="#f4f0e6"/><polygon points="24,8 40,8 8,40 8,24" fill="#f4f0e6"/><polygon points="40,8 56,8 8,56 8,40" fill="#f4f0e6"/><polygon points="56,8 56,24 24,56 8,56" fill="#f4f0e6"/><polygon points="56,24 56,40 40,56 24,56" fill="#f4f0e6"/></svg>`;
+  const horseShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#b4332a" stroke="#1c1915"/><path d="M24 44c4-12 10-16 18-18-2-4-6-6-10-4-4 2-8 8-8 14z" fill="#f4f0e6"/><circle cx="28" cy="24" r="5" fill="#f4f0e6"/><path d="M24 44l-6 10M36 44l4 10M40 34l8 8" stroke="#f4f0e6" stroke-width="2.5"/></svg>`;
+  const redEagleShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#f4f0e6" stroke="#1c1915"/><path d="M30 34c-16-4-20 8-16 18 8-4 12-6 16-12z" fill="#b4332a"/><path d="M34 32c14-8 20 2 16 16-8-2-12-4-16-10z" fill="#b4332a"/><ellipse cx="32" cy="42" rx="6" ry="12" fill="#b4332a"/><circle cx="40" cy="22" r="5" fill="#b4332a"/><path d="M44 21h8l-3 3z" fill="#e4c33a"/></svg>`;
+  const nrwShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#2c5a38" stroke="#1c1915"/><path d="M32 8h24v46c0 5-4 10-12 14V8z" fill="#b4332a"/><path d="M14 20q10 6 0 12t0 12" stroke="#f4f0e6" stroke-width="3" fill="none"/><circle cx="44" cy="46" r="6" fill="#b4332a" stroke="#e4c33a" stroke-width="1.8"/></svg>`;
+  const saxonBars = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#e4c33a" stroke="#1c1915"/><path d="M8 16h48v8H8zM8 32h48v8H8zM8 48h48v8H8z" fill="#1c1915"/><path d="M12 12l40 40" stroke="#2c5a38" stroke-width="6" stroke-linecap="round"/></svg>`;
+  const bullShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#e4c33a" stroke="#1c1915"/><ellipse cx="32" cy="40" rx="14" ry="12" fill="#1c1915"/><path d="M22 30c-6-10-2-16 4-14M42 30c6-10 2-16-4-14" stroke="#f4f0e6" stroke-width="3" fill="none"/><circle cx="26" cy="38" r="2.5" fill="#f4f0e6"/><circle cx="38" cy="38" r="2.5" fill="#f4f0e6"/></svg>`;
+  const wheelCross = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#b4332a" stroke="#1c1915"/><circle cx="24" cy="28" r="10" stroke="#f4f0e6" stroke-width="2.5" fill="none"/><line x1="14" y1="28" x2="34" y2="28" stroke="#f4f0e6" stroke-width="2"/><line x1="24" y1="18" x2="24" y2="38" stroke="#f4f0e6" stroke-width="2"/><path d="M40 20h12v16H40z" fill="#f4f0e6"/><line x1="46" y1="14" x2="46" y2="42" stroke="#b4332a" stroke-width="2"/></svg>`;
+  const nettleLions = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#b4332a" stroke="#1c1915"/><path d="M8 8h24v56C18 62 8 56 8 46z" fill="#e4c33a"/><path d="M12 24h14M12 40h14" stroke="#2c4c9a" stroke-width="4"/><polygon points="44,20 54,34 46,46 36,36" fill="#f4f0e6"/></svg>`;
+  const anhaltShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#f4f0e6" stroke="#1c1915"/><path d="M8 38h48v24C32 68 8 58 8 38z" fill="#b4332a"/><ellipse cx="32" cy="34" rx="10" ry="7" fill="#1c1915"/><circle cx="26" cy="30" r="3" fill="#1c1915"/></svg>`;
+  const saarShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#2c4c7a" stroke="#1c1915"/><path d="M32 8h24v26H32z" fill="#f4f0e6"/><path d="M8 34h24v28c-8-2-16-8-24-16z" fill="#e4c33a"/><path d="M32 34h24v12c0 8-12 16-24 18z" fill="#b4332a"/><line x1="8" y1="34" x2="56" y2="34" stroke="#1c1915" stroke-width="1.5"/><line x1="32" y1="8" x2="32" y2="70" stroke="#1c1915" stroke-width="1.5"/></svg>`;
+  const thShield = `<svg viewBox="0 0 64 76" aria-hidden="true"><path d="M8 8h48v46c0 10-10 16-24 18C18 70 8 64 8 54z" fill="#2c4c9a" stroke="#1c1915"/><path d="M10 16h44v8H10zM10 32h44v8H10z" fill="#f4f0e6"/><path d="M10 24h44v8H10zM10 40h44v8H10z" fill="#b4332a"/>${stars(32, 38, 18, 8, "#f4f0e6")}</svg>`;
 
   // Flags
   const us = `<svg viewBox="0 0 72 48" aria-hidden="true"><rect width="72" height="48" fill="#f4f0e6" stroke="#1c1915"/><rect width="72" height="6.8" y="0" fill="#b4332a"/><rect width="72" height="6.8" y="13.6" fill="#b4332a"/><rect width="72" height="6.8" y="27.2" fill="#b4332a"/><rect width="72" height="6.8" y="40.8" fill="#b4332a"/><rect width="30" height="26" fill="#2c4c7a"/></svg>`;
@@ -88,11 +102,6 @@
   }
 
   // Pre-configured questions
-  const berlinWappen = frame(
-    cell(1, castle) + cell(2, key) + cell(3, lion) + cell(4, bear),
-    "Vereinfachte Wappen. Die Bildnummern entsprechen dem BAMF-Katalog."
-  );
-
   const wappen4 = frame(
     cell(1, eagle) + cell(2, chi) + cell(3, cross) + cell(4, gdr),
     "Vereinfacht gezeichnet. Die Bildnummern entsprechen dem BAMF-Katalog."
@@ -122,6 +131,13 @@
     return `<div class="note" style="border-left:3px solid var(--muted);padding-left:0.6rem"><strong>Foto im Katalog (${title}):</strong> ${text}</div>`;
   }
 
+  function wappenRow(w1, w2, w3, w4) {
+    return frame(
+      cell(1, w1) + cell(2, w2) + cell(3, w3) + cell(4, w4),
+      "Vereinfachte Wappen. Die Bildnummern entsprechen dem BAMF-Katalog."
+    );
+  }
+
   const byId = {
     // General Questions
     "g-021": wappen4,
@@ -134,8 +150,23 @@
     "g-226": flags,
     "g-235": photoNote("Aufgabe 235", "François Mitterrand und Helmut Kohl reichen sich 1984 in Verdun die Hände (Aussöhnung)."),
 
-    // Berlin Coat of Arms
-    "BE-01": berlinWappen,
+    // 16 State Coat of Arms Questions (XX-01)
+    "BW-01": wappenRow(bwShield, byShield, lion, castle),       // 1: BW (Correct)
+    "BY-01": wappenRow(bwShield, byShield, lion, bear),         // 2: BY (Correct)
+    "BE-01": wappenRow(castle, key, lion, bear),                // 4: BE (Correct)
+    "BB-01": wappenRow(saxonBars, bullShield, castle, redEagleShield), // 4: BB (Correct)
+    "HB-01": wappenRow(castle, lion, key, bear),                // 3: HB (Correct)
+    "HH-01": wappenRow(key, castle, lion, bear),                // 2: HH (Correct)
+    "HE-01": wappenRow(lion, bwShield, byShield, bear),         // 1: HE (Correct)
+    "MV-01": wappenRow(castle, redEagleShield, bullShield, horseShield), // 3: MV (Correct)
+    "NI-01": wappenRow(castle, nettleLions, horseShield, lion), // 3: NI (Correct)
+    "NW-01": wappenRow(lion, nrwShield, bwShield, castle),      // 2: NW (Correct)
+    "RP-01": wappenRow(wheelCross, lion, saarShield, castle),   // 1: RP (Correct)
+    "SL-01": wappenRow(lion, wheelCross, horseShield, saarShield), // 4: SL (Correct)
+    "SN-01": wappenRow(redEagleShield, anhaltShield, bullShield, saxonBars), // 4: SN (Correct)
+    "ST-01": wappenRow(saxonBars, redEagleShield, bullShield, anhaltShield), // 4: ST (Correct)
+    "SH-01": wappenRow(castle, horseShield, nettleLions, bullShield), // 3: SH (Correct)
+    "TH-01": wappenRow(saxonBars, anhaltShield, lion, thShield), // 4: TH (Correct)
 
     // 16 Bundesländer Map Questions (XX-08)
     "BW-08": makeGermanyMap([

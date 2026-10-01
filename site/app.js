@@ -42,6 +42,7 @@
       hints: saved.hints !== false,
       filter: saved.filter || "all",
       index: typeof saved.index === "number" ? saved.index : 0,
+      shuffle: Boolean(saved.shuffle),
       revealed: false,
       pick: null,
       hint: null,
@@ -49,9 +50,11 @@
       stats: saved.stats || {},
       stars: saved.stars || {},
       exam: saved.exam || null,
+      examHistory: Array.isArray(saved.examHistory) ? saved.examHistory : [],
       confirmSubmit: false,
       showDataModal: false,
       doneList: false,
+      gridQuery: "",
     };
   }
 
@@ -63,9 +66,11 @@
       hints: state.hints,
       filter: state.filter,
       index: state.index,
+      shuffle: state.shuffle,
       stats: state.stats,
       stars: state.stars,
       exam: state.exam,
+      examHistory: state.examHistory,
     }));
   }
 
@@ -77,6 +82,18 @@
 
   function isLetter(ch) {
     return /\p{L}/u.test(ch || "");
+  }
+
+  function speakText(text) {
+    if (!("speechSynthesis" in window)) return;
+    try {
+      window.speechSynthesis.cancel();
+      const clean = text.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+      const u = new SpeechSynthesisUtterance(clean);
+      u.lang = "de-DE";
+      u.rate = 0.9;
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
   }
 
   function decorate(text) {
@@ -113,10 +130,28 @@
     return html;
   }
 
+  function shuffleDeterministic(list, seed) {
+    const arr = list.slice();
+    let s = 0;
+    for (let i = 0; i < seed.length; i++) s += seed.charCodeAt(i);
+    for (let i = arr.length - 1; i > 0; i--) {
+      s = (s * 9301 + 49297) % 233280;
+      const j = Math.floor((s / 233280) * (i + 1));
+      const tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+    return arr;
+  }
+
   function pool() {
-    return QUESTIONS
+    let list = QUESTIONS
       .filter((q) => q.land === null || q.land === state.land)
       .sort((a, b) => (Number(a.land !== null) - Number(b.land !== null)) || (a.num - b.num));
+    if (state.shuffle && state.mode === "learn") {
+      list = shuffleDeterministic(list, state.land);
+    }
+    return list;
   }
 
   function visible() {
@@ -217,6 +252,15 @@
       mark(id, good);
     }
     exam.done = { score, wrong, at: Date.now() };
+    state.examHistory.unshift({
+      score,
+      total: 33,
+      passedCourse: score >= 15,
+      passedCitizen: score >= 17,
+      at: Date.now(),
+      land: exam.land,
+    });
+    if (state.examHistory.length > 20) state.examHistory.pop();
     save();
     render();
   }
@@ -235,6 +279,15 @@
       else if (i === pick) classes.push("is-wrong");
     } else if (i === pick) classes.push("picked");
     return classes.join(" ");
+  }
+
+  function activeExamBanner() {
+    if (!state.exam || state.exam.done || state.mode === "exam") return "";
+    const left = remaining();
+    return `<div class="warn" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+      <span>⏱️ <strong>Prüfung läuft:</strong> noch ${clock(left)}</span>
+      <button type="button" class="go" data-act="resume-exam" style="min-height:2rem;padding:0.2rem 0.6rem">Zur Prüfung</button>
+    </div>`;
   }
 
   function renderDataModal() {
@@ -269,6 +322,7 @@
 
     if (!list.length && !pinned) {
       app.innerHTML = `
+        ${activeExamBanner()}
         <div class="status">
           <span>${c.seen} von ${c.total} gesehen · ${c.ok} richtig · ${c.bad} falsch · ${c.star} gemerkt</span>
           <span class="filters">
@@ -284,6 +338,7 @@
 
     if (state.doneList) {
       app.innerHTML = `
+        ${activeExamBanner()}
         <div class="status">
           <span>Auswahl abgeschlossen · ${c.seen} gesehen · ${c.ok} richtig · ${c.bad} falsch</span>
         </div>
@@ -328,6 +383,7 @@
       : "";
 
     app.innerHTML = `
+      ${activeExamBanner()}
       <div class="status">
         <span>Frage ${state.index + 1} von ${list.length} · ${c.seen} gesehen · ${c.ok} richtig · ${c.bad} falsch</span>
         <span class="filters" ${state.mode === "wrong" ? "hidden" : ""}>
@@ -335,14 +391,18 @@
           <button type="button" class="text-btn ${state.filter === "new" ? "on" : ""}" data-act="filter" data-filter="new">Neu</button>
           <button type="button" class="text-btn ${state.filter === "bad" ? "on" : ""}" data-act="filter" data-filter="bad">Falsch (${c.bad})</button>
           <button type="button" class="text-btn ${state.filter === "star" ? "on" : ""}" data-act="filter" data-filter="star">Gemerkt (${c.star})</button>
+          <button type="button" class="text-btn ${state.shuffle ? "on" : ""}" data-act="toggle-shuffle" title="Reihenfolge mischen">${state.shuffle ? "🔀 Gemischt" : "🔢 Sortiert"}</button>
         </span>
       </div>
       <article class="card">
         <div class="q-header">
           <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
-          <button type="button" class="star-btn ${isStarred ? "on" : ""}" data-act="toggle-star" data-id="${esc(q.id)}" title="${isStarred ? "Aus Gemerkt entfernen" : "Frage merken"}">
-            ${isStarred ? "★ Gemerkt" : "☆ Merken"}
-          </button>
+          <div style="display:flex;gap:0.4rem;align-items:center">
+            <button type="button" class="text-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen" style="min-height:1.8rem;padding:0.1rem 0.4rem">🔊</button>
+            <button type="button" class="star-btn ${isStarred ? "on" : ""}" data-act="toggle-star" data-id="${esc(q.id)}" title="${isStarred ? "Aus Gemerkt entfernen" : "Frage merken"}">
+              ${isStarred ? "★ Gemerkt" : "☆ Merken"}
+            </button>
+          </div>
         </div>
         <p class="q-text">${decorate(q.question)}</p>
         ${hint}
@@ -366,12 +426,28 @@
     const exam = state.exam;
     if (!exam) {
       const landName = (LANDS.find((row) => row[0] === state.land) || ["", state.land])[1];
+      const historyItems = (state.examHistory || []).slice(0, 5).map((h) => {
+        const d = new Date(h.at).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
+        return `<li style="display:flex;justify-content:space-between;padding:0.3rem 0;border-bottom:1px solid var(--rule)">
+          <span>${d} — <b>${h.score}/33</b> Punkte</span>
+          <span class="${h.passedCitizen ? "hit" : (h.passedCourse ? "hit" : "miss")}">
+            ${h.passedCitizen ? "Einbürgerung bestanden" : (h.passedCourse ? "Kurs bestanden" : "Nicht bestanden")}
+          </span>
+        </li>`;
+      }).join("");
+
       app.innerHTML = `
         <section class="exam-intro card">
           <h2>Prüfung</h2>
           <p>33 Fragen, 60 Minuten. 30 allgemeine und 3 aus ${esc(landName)}.</p>
           <p>Vier Antworten, eine davon richtig. Auflösung erst am Ende. Keine Worttipps.</p>
           <p>Kurs „Leben in Deutschland“: ab 15 von 33. Einbürgerungstest: ab 17 von 33.</p>
+          ${historyItems ? `
+            <div style="margin:1rem 0">
+              <h3>Letzte Prüfungsergebnisse</h3>
+              <ul style="list-style:none;padding:0;margin:0.4rem 0">${historyItems}</ul>
+            </div>
+          ` : ""}
           <div class="row"><button type="button" class="go" data-act="start-exam">Prüfung beginnen</button></div>
         </section>`;
       return;
@@ -421,7 +497,7 @@
     const unpicked = exam.ids.length - Object.keys(exam.picks).length;
     const confirmBox = state.confirmSubmit
       ? `<div class="confirm-box">
-          <p><strong>Unbeantwortete Fragen:</strong> Du hast ${unpicked} von 33 Fragen noch nicht beantwortet.</p>
+          <p><strong>Unbeantwortete Fragen:</strong> Du hast noch ${unpicked} von 33 Fragen nicht beantwortet.</p>
           <p class="quiet">Unbeantwortete Fragen gelten als nicht bestanden.</p>
           <div class="row">
             <button type="button" class="go" data-act="confirm-submit-exam">Ja, jetzt abgeben</button>
@@ -446,7 +522,10 @@
       </div>
       ${confirmBox}
       <article class="card">
-        <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
+        <div class="q-header">
+          <p class="q-num">${q.land ? q.land : "Allgemein"} ${q.num}</p>
+          <button type="button" class="text-btn" data-act="speak" data-text="${esc(q.question)}" title="Frage vorlesen" aria-label="Frage vorlesen" style="min-height:1.8rem;padding:0.1rem 0.4rem">🔊</button>
+        </div>
         <p class="q-text">${esc(q.question)}</p>
         ${figureFor(q)}
         <div class="options" role="radiogroup">${opts}</div>
@@ -465,22 +544,39 @@
     }
 
     const all = pool();
-    const general = all.filter((q) => q.land === null);
-    const local = all.filter((q) => q.land);
+    const query = (state.gridQuery || "").trim().toLowerCase();
+    
+    let filteredAll = all;
+    if (query) {
+      filteredAll = all.filter((q) => {
+        if (String(q.num) === query) return true;
+        if (q.question && q.question.toLowerCase().includes(query)) return true;
+        if (q.options && q.options.some((o) => o.toLowerCase().includes(query))) return true;
+        return false;
+      });
+    }
+
+    const general = filteredAll.filter((q) => q.land === null);
+    const local = filteredAll.filter((q) => q.land);
     const cell = (q) => {
       const row = state.stats[q.id];
       const isStarred = Boolean(state.stars[q.id]);
       let cls = row ? row.last : "";
       if (isStarred) cls = (cls ? cls + " " : "") + "starred";
-      return `<button type="button" class="${cls}" data-act="open" data-id="${esc(q.id)}" title="${isStarred ? "★ Gemerkt" : ""}">${q.num}</button>`;
+      return `<button type="button" class="${cls}" data-act="open" data-id="${esc(q.id)}" title="${q.num}. ${esc(q.question.slice(0, 80))}...">${q.num}</button>`;
     };
     const landName = (LANDS.find((row) => row[0] === state.land) || ["", ""])[1];
+
     app.innerHTML = `
+      ${activeExamBanner()}
       <p class="quiet">Antippen öffnet die Frage. Grün zuletzt richtig, rot zuletzt falsch.</p>
-      <h3>Allgemeine Fragen</h3>
-      <div class="grid">${general.map(cell).join("")}</div>
-      <h3>${esc(landName)}</h3>
-      <div class="grid">${local.map(cell).join("")}</div>`;
+      <div style="margin: 0.6rem 0">
+        <input type="search" id="grid-search-input" placeholder="Frage suchen (z. B. Grundgesetz, Wahl, 25)..." value="${esc(state.gridQuery || "")}" style="width:100%;padding:0.4rem 0.6rem;background:transparent;border:1px solid var(--rule);color:inherit;min-height:2.4rem">
+      </div>
+      <h3>Allgemeine Fragen (${general.length})</h3>
+      <div class="grid">${general.length ? general.map(cell).join("") : '<p class="quiet">Keine Treffer</p>'}</div>
+      <h3>${esc(landName)} (${local.length})</h3>
+      <div class="grid">${local.length ? local.map(cell).join("") : '<p class="quiet">Keine Treffer</p>'}</div>`;
   }
 
   function render() {
@@ -517,6 +613,18 @@
     if (!el) return;
     const act = el.dataset.act;
 
+    if (act === "resume-exam") {
+      state.mode = "exam";
+      save();
+      render();
+      return;
+    }
+
+    if (act === "speak") {
+      speakText(el.dataset.text || "");
+      return;
+    }
+
     if (el.dataset.mode) {
       state.mode = el.dataset.mode;
       state.revealed = false;
@@ -549,6 +657,16 @@
     if (act === "toggle-hints") {
       state.hints = !state.hints;
       state.hint = null;
+      save();
+      render();
+      return;
+    }
+
+    if (act === "toggle-shuffle") {
+      state.shuffle = !state.shuffle;
+      state.index = 0;
+      state.revealed = false;
+      state.pick = null;
       save();
       render();
       return;
@@ -734,6 +852,7 @@
         land: state.land,
         stats: state.stats,
         stars: state.stars,
+        examHistory: state.examHistory,
       };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
@@ -751,6 +870,7 @@
       if (window.confirm("Möchtest du wirklich deinen gesamten Lernfortschritt zurücksetzen?")) {
         state.stats = {};
         state.stars = {};
+        state.examHistory = [];
         save();
         const msg = document.getElementById("data-msg");
         if (msg) msg.textContent = "Statistik wurde erfolgreich zurückgesetzt.";
@@ -771,6 +891,9 @@
           state.stats = Object.assign(state.stats || {}, parsed.stats);
           if (parsed.stars && typeof parsed.stars === "object") {
             state.stars = Object.assign(state.stars || {}, parsed.stars);
+          }
+          if (Array.isArray(parsed.examHistory)) {
+            state.examHistory = parsed.examHistory.slice(0, 20);
           }
           if (parsed.land && LANDS.some(([code]) => code === parsed.land)) {
             state.land = parsed.land;
@@ -830,6 +953,13 @@
   }
 
   document.body.addEventListener("click", onClick);
+  document.body.addEventListener("input", (e) => {
+    if (e.target && e.target.id === "grid-search-input") {
+      state.gridQuery = e.target.value;
+      renderGrid();
+    }
+  });
+
   document.body.addEventListener("change", (e) => {
     if (e.target && e.target.dataset && e.target.dataset.act === "import-file") {
       handleFileImport(e);
