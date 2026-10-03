@@ -1,4 +1,4 @@
-const CACHE = "lid-klasse-4";
+const CACHE = "lid-klasse-5";
 const FILES = [
   "./",
   "./index.html",
