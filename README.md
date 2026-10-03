@@ -1,136 +1,80 @@
 # lid-klasse 🇩🇪
 
-> **Übungsheft & Prüfungssimulator für den Test „Leben in Deutschland“ und den Einbürgerungstest.**
-> Basierend auf dem offiziellen Gesamtfragenkatalog des BAMF (Stand: 07.05.2025).
+[![Live](https://img.shields.io/badge/App-live-0f0f0e?style=flat-square)](https://sanuka595.github.io/lid-klasse/)
+[![Fragen](https://img.shields.io/badge/Fragen-460-2e7d4f?style=flat-square)](https://sanuka595.github.io/lid-klasse/)
+[![Katalog](https://img.shields.io/badge/BAMF-07.05.2025-4a6fa5?style=flat-square)](https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.html)
+
+> **Übungsheft & Prüfungssimulator** für den Test **„Leben in Deutschland“** und den **Einbürgerungstest**.  
+> Offizieller Gesamtfragenkatalog des BAMF, Stand **07.05.2025**.
+
+**Приложение:** [sanuka595.github.io/lid-klasse](https://sanuka595.github.io/lid-klasse/)
+
+Автономная PWA: 460 вопросов, экзамен на 60 минут, оффлайн, украинские подсказки только к сложным терминам.
 
 ---
 
-## 📌 О проекте
+## Возможности
 
-`lid-klasse` — это автономное, быстрое веб-приложение (Progressive Web App / PWA), созданное для подготовки к тестам **„Leben in Deutschland“ (LiD)** и **„Einbürgerungstest“**.
-
-### Основные возможности:
-- **Полная база вопросов:** 460 вопросов (300 общих + по 10 вопросов для каждой из 16 федеральных земель).
-- **Режимы обучения:**
-  - 📖 **Lernen:** последовательное или случайное изучение с мгновенной проверкой ответов.
-  - ❌ **Nur Fehler:** режим работы над ошибками (повторение только неверно отвеченных вопросов).
-  - ⭐ **Gemerkt:** избранные вопросы (быстрое добавление в закладки одной кнопкой).
-  - 📝 **Prüfung:** симуляция официального экзамена (33 случайных вопроса: 30 общих + 3 земельных, 60-минутный таймер, навигационная сетка 1..33, защита от случайной сдачи).
-  - 🗺️ **Übersicht:** общая сетка всех вопросов с цветовой индикацией (зеленый/красный) и поиском по ключевым словам или номеру.
-- **Озвучка вопросов 🔊:** нативное произношение немецкого текста вслух (Web Speech API).
-- **Словарь терминов (Глоссарий):** 410 административно-правовых и исторических понятий с переводом и подсветкой в тексте.
-- **100% покрытие графических вопросов:**
-  - Векторные карты Германии для всех 16 земельных вопросов (`XX-08`).
-  - Векторные гербы для всех 16 земель (`XX-01`).
-  - Архитектурные иллюстрации (Рейхстаг `g-055`), избирательные бюллетени (`g-130`), символика Бундестага (`g-216`) и фотокарточки исторических событий.
-- **Полное управление с клавиатуры:** клавиши `1..4` для ответов, `Space`/`Enter` и стрелки `←`/`→` для переключения вопросов.
-- **Резервное копирование и синхронизация:** экспорт и импорт прогресса через JSON-файл в меню «Daten».
-- **100% оффлайн:** Service Worker кэширует всё приложение, работает без интернета.
+- **460 вопросов** — 300 общих + по 10 на каждую из 16 земель
+- **Lernen** — подряд или вразброс, сразу видно ответ
+- **Nur Fehler** — только ошибки
+- **Gemerkt** — закладки
+- **Prüfung** — 33 вопроса (30 + 3 земельных), таймер 60 мин, сетка 1…33
+- **Übersicht** — вся сетка, поиск по номеру или слову
+- **Озвучка** — немецкая речь через Web Speech API
+- **Глоссарий** — подсветка сложных админ-, правовых и исторических слов (не Schule / Eltern)
+- **Картинки** — векторные карты и гербы всех земель, Рейхстаг, бюллетень, символика
+- **Клавиатура** — `1…4`, `Space` / `Enter`, `←` `→`
+- **Daten** — экспорт / импорт прогресса JSON
+- **Оффлайн** — Service Worker кэширует всё приложение
 
 ---
 
-## 📁 Структура проекта
+## Локально
+
+Чисто HTML / JS / CSS, без сборки фронта.
+
+```bash
+npm start
+# или
+python3 -m http.server 8000 --directory docs
+```
+
+Открыть: [http://localhost:8000](http://localhost:8000)
+
+```bash
+npm test
+npm run build   # если менял data/source/
+```
+
+---
+
+## Структура
 
 ```
 lid-klasse/
-├── data/
-│   ├── source/               # Исходные эталонные данные каталога BAMF
-│   │   ├── full.txt          # Извлечённый текст официального PDF
-│   │   ├── p1-4.txt
-│   │   └── ref/quiz-data.json
-│   ├── questions.json        # Полная структурированная база (460 вопросов)
-│   └── build-report.json     # Отчёт парсинга и сопоставления ответов
-├── scripts/
-│   └── build_data.py         # Скрипт сборки данных и экспорта в docs/questions.js
-├── docs/                    # Фронтенд-приложение (GitHub Pages / PWA)
-│   ├── index.html            # Главная страница
-│   ├── app.js                # Логика приложения (навигация, экзамен, хранилище)
-│   ├── figures.js            # Векторные SVG-карты, гербы и иллюстрации
-│   ├── glossary.js           # Словарь понятий
-│   ├── questions.js          # База вопросов для браузера
-│   ├── styles.css            # Стили (газетная эстетика, светлая/тёмная тема)
-│   ├── sw.js                 # Service Worker (оффлайн-кэш)
-│   ├── manifest.webmanifest  # PWA-манифест
-│   └── icon.svg              # Иконка
+├── data/                 # каталог BAMF и сборка
+├── scripts/build_data.py
+├── docs/                 # то, что отдаёт GitHub Pages / Cloudflare
 ├── tests/
-│   └── test_data_integrity.py# Автотесты целостности каталога и схемы
-├── .gitignore
 ├── package.json
 └── README.md
 ```
 
----
-
-## 🚀 Запуск и разработка
-
-### Быстрый запуск локального сервера
-
-Так как проект написан на чистом HTML/JS/CSS без зависимостей, запустить его можно любой удобной командой:
-
-```bash
-# Через npm:
-npm start
-
-# Или напрямую через Python:
-python3 -m http.server 8000 --directory docs
-```
-После запуска откройте в браузере: **http://localhost:8000**
+Папка **`docs/` — корень сайта**. Относительные пути (`./app.js`, `./glossary.js`, service worker) завязаны на неё. Не переименовывать и не переносить: сломается и Pages, и Cloudflare.
 
 ---
 
-### Запуск тестов
+## Деплой
 
-Тесты проверяют корректность 460 вопросов, ключей ответов, глоссария и ссылок на иллюстрации:
-
-```bash
-npm test
-# или:
-python3 -m unittest discover -s tests -v
-```
-
----
-
-### Пересборка каталога данных
-
-Если вы обновили исходные тексты в `data/source/`:
+Репозиторий уже на GitHub: [Sanuka595/lid-klasse](https://github.com/Sanuka595/lid-klasse).  
+Живой сайт читает ветку `main`, каталог `/docs`.
 
 ```bash
-npm run build
-# или:
-python3 scripts/build_data.py
-```
-Скрипт автоматически обновит `data/questions.json`, `data/build-report.json` и `docs/questions.js`.
-
----
-
-## 🌐 Как подключить и выгрузить проект на GitHub
-
-Локальный Git-репозиторий уже инициализирован на вашем компьютере прямо в этой папке. Чтобы связать его с вашим удалённым аккаунтом на GitHub:
-
-1. **Создайте новый пустой репозиторий на GitHub:**
-   - Перейдите на [github.com/new](https://github.com/new).
-   - Укажите имя, например: `lid-klasse`.
-   - **Не** ставьте галочки «Add a README file» или «.gitignore» (они уже есть в проекте).
-   - Нажмите **Create repository**.
-
-2. **Привяжите локальный проект к GitHub и отправьте код:**
-
-```bash
-cd /home/forg/Projects/lid-klasse
-
-# Если используете SSH (рекомендуется):
-git remote add origin git@github.com:<ВАШ_АККАУНТ>/lid-klasse.git
-
-# Или если используете HTTPS:
-git remote add origin https://github.com/<ВАШ_АККАУНТ>/lid-klasse.git
-
-# Переименуйте ветку в main и сделайте push:
-git branch -M main
-git push -u origin main
+cd /home/forg/Projekt/lid-klasse
+git add -u
+git commit -m "feat: …"
+git push origin main
 ```
 
-3. **Бесплатная публикация сайта (GitHub Pages):**
-   - В созданном репозитории на GitHub перейдите в **Settings** ➔ **Pages**.
-   - В разделе *Build and deployment* выберите Source: **Deploy from a branch**.
-   - Выберите ветку `main` и папку **/docs**.
-   - Нажмите **Save**. Через 1 минуту приложение будет доступно онлайн для любого пользователя или телефона!
+Cloudflare подтянет `main` сам. Кэш PWA сбрасывается bump’ом имени в `docs/sw.js` (`lid-klasse-N`).
